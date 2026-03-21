@@ -1,0 +1,143 @@
+<html>
+<head>    
+    <title>CSS Internal</title>
+    <style>
+
+        header{
+            background-color: rgb(37, 153, 147);
+            text-align: center;
+            padding: 50px;
+            font-family: sans-serif;
+            font-size: 64px;
+            font-weight: bold;
+        }
+
+        nav{
+            background-color: #75806c;
+            text-align: center;
+            font-size: 15px;
+            color: antiquewhite;
+        }
+
+        /* Element Selector */
+        h1{
+            color: rgba(19, 86, 86, 0.953);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 48px;
+            background-color: beige;
+        }
+        p1{
+            color: blueviolet;
+            font-size: 24px;
+        }
+        p2{
+            background-color: bisque;
+            font-weight: bold;
+            font-display: swap;
+            border-color: black;
+            
+
+        }    
+
+           /* class selector */
+        .highlight1{
+            background-color: khaki;
+        }
+
+        .highlight2{
+            background-color: coral;
+        }
+
+         /* id selector*/
+        #mainHeading {
+            color: red;
+            font-size: 58px;
+        }
+
+         /* grp selector*/
+        h2,p7, p8{
+            background-color: bisque;
+        }
+
+        /* attribute selector */
+        input[type="text"]{
+            border: 20px;
+            border-color: chartreuse;
+            border-bottom: 10;
+            padding: 20px;
+        }
+
+        /* pseudo class selector*/
+        a:hover{
+            color: brown;
+        }
+
+        /* pseudo element selector*/
+        h3::first-letter{
+            font-size: 25px;
+            color: coral;
+        }
+
+        h4::first-line{
+            font-size: 34px;
+            background-color: aqua;
+        }
+
+        footer{
+            background-color: rgb(138, 50, 114);
+            font-size: 50px;
+            font-weight: bolder;
+            padding: 30px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <center>
+
+        <header> Game of Thrones</header>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Gallery</a>
+        </nav>
+
+        <!-- * selects all & apply to whole sheet-->
+
+    <h1>Heading 1</h1>
+    <p1>Paragraph 1</p1><br><br>
+    <p2>Paragraph 2</p2><br><br>
+
+    <!-- highlight is applicable to multiple tags-->
+    <p3 class="highlight1">I am a EXTC Student</p3><br><br>
+    <p4 class="highlight1">Para 4</p4><br><br>
+    <p5 class="highlight2">Para 5</p5><br><br>
+
+    <!--only applicable to one tag and once-->
+    <p6 id="mainHeading">Id Selector</p6><br><br>
+  
+
+    <h2>Heading 2</h2>
+    <p7>Paragraph 7</p7><br><br>
+    <p8>Paragraph 8</p8><br><br>
+     
+     <form action="#" method="post" enctype="multipart/form-data">
+        enter name:
+        <input type="text" name="name" placeholder="Enter your name"><br><br>
+    </form>
+
+    <a href="https://www.google.com/search?q=comments+in+html&oq=comments+in+html&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCDM2ODRqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8">html tags</a>
+    <br><br>
+
+    <h3>Winter is Coming</h3>
+    <h4>Dracareys<br>Dragons</h4><br><br>
+
+    <footer>@Himanshu Ghuguskar</footer>
+
+    </center>  
+</body>
+
+
+
+</html>

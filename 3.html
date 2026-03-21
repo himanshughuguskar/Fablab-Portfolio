@@ -1,0 +1,146 @@
+<html>
+    <head>
+        <title>Biodata</title>
+    </head>
+    <body>
+        <h1><center>CID Spy Form</center></h1>
+        <center>
+        <form action="#" method="post" enctype="multipart/form-data">
+            Name:
+            <input type="text" name="fullname" placeholder="Name...." required>
+            <br><br>
+
+            Password:
+            <input type="password" name="password" minlength="6" placeholder="min 6 digit" required>
+            <br><br>
+
+            Email:
+            <input type="email" placeholder="E-mail" required>
+            <br><br>
+
+            Contact No:
+            <input type="tel" pattern="[0-9]{10}" placeholder="10 digit Contact Number" required>
+            <br><br>
+
+            Website:
+            <input type="url" name="website" placeholder="https://example.com" required>
+            <br><br>
+
+            DOB:
+            <input type="date" required>
+            <br><br>
+
+            Image:
+            <input type="file" accept="image/*" required>
+            <br><br>
+
+            Audio:
+            <input type="file" accept="audio/*" required>
+            <br><br>
+
+            Gender:
+            <input type="radio" name="gender" value="male" required> Male
+            <input type="radio" name="gender" value="female" required> Female
+            <input type="radio" name="gender" value="other" required> Other
+            <br><br>
+
+            Hobbies:
+            <input type="checkbox" name="hobby" value="playbadminton"> Play Badminton
+            <input type="checkbox" name="hobby" value="music"> Music
+            <input type="checkbox" name="hobby" value="reading"> reading
+            <br><br>
+
+            Favorite Colour:
+            <input type="color" required>
+            <br><br>
+
+            Branch:
+            <select name="branch" required>
+                <option>Select Branch</option>
+                <option value="extc">EXTC</option>
+                <option value="mech">Mechanical</option>
+                <option value="it">IT</option>
+                <option value="cse">CSE</option>
+                <option value="elpo">ELPO</option>
+            </select>
+            <br><br>
+
+            Subjects (Hold Ctrl & Select Multiple):<br>
+            <select name="subjects" Multiple size="4">
+                <option value="math">Mathematics</option>
+                 <option value="chem">Chemistry</option>
+                  <option value="phy">Physics</option>
+                   <option value="cs">CS</option>
+                    <option value="pc">PC</option>
+            </select>
+            <br><br>
+
+            Satisfaction:
+            <input type="range" min="0" max="10" required>
+            <br><br><br>
+
+            Upload Profile pic:
+            <input type="file" name="Profile" accept="image/*">
+            <br><br>
+
+            Adress:
+            <textarea name="adress" rows="3" cols="40" placeholder="Enter your Adress" required></textarea>
+            <br><br>
+
+             <input type="submit" value="submit">
+            <input type="reset" value="reset">
+            <br><br>
+
+            <h1>HW 12-03</h1>
+            <br><br>
+
+
+            <fieldset>
+                <legend width="65%">Personal:</legend>
+                First name:
+                <input type="text"id="fname" name="fname" value="Himanshu"><br><br>
+                Last name:
+                <input type="text" id="lname" name="lname" value="Ghuguskar"><br><br>
+                <input type="submit" value="Submit">
+            </fieldset>
+            <br><br>
+
+           Click Me: 
+           <button type="button" onclick="alert('Hello Friendssss.......')">Click Me!</button>
+           <br><br>
+
+           Browser:
+           <input list="browsers">
+           <datalist id="browsers">
+            <option value="Edge">
+            <option value="Firefox">
+            <option value="Chrome">
+            <option value="Opera">
+            <option value="Safari">
+           </datalist>
+           <br><br>
+
+           Enter the Number:
+            <input type="number" name="num" value="0" min="0" max="100">
+           <br><br>
+
+           Search:
+           <input type="search" id="search" name="query">
+           <button>Search</button>
+           <br><br>
+
+           Enter the time:
+           <input type="time" name="time">
+
+         
+ 
+ 
+ 
+
+        </form>
+        </center>
+    </body>
+
+
+
+</html>

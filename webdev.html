@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development Journey | 7 Days Deep</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="webdev.css">
+</head>
+<body>
+
+    <!-- Ambient underwater background -->
+    <canvas id="underwater-bg" class="underwater-bg"></canvas>
+
+    <!-- Floating bubbles layer -->
+    <div id="bubbles-layer" class="bubbles-layer"></div>
+
+    <!-- Navigation -->
+    <nav class="wd-nav">
+        <a href="index.html" class="wd-nav-back">
+            <i class="fas fa-arrow-left"></i>
+            <span>Back to Portfolio</span>
+        </a>
+        <div class="wd-nav-brand">
+            <div class="wd-nav-logo">
+                <i class="fas fa-code"></i>
+            </div>
+            <span>Web Dev Journey</span>
+        </div>
+        <div class="wd-nav-depth" id="depth-meter">
+            <i class="fas fa-water"></i>
+            <span id="depth-value">0m</span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="wd-hero">
+        <div class="wd-hero-content">
+            <div class="wd-hero-badge">
+                <i class="fas fa-anchor"></i>
+                <span>10 Days Learning Path</span>
+            </div>
+            <h1 class="wd-hero-title">
+                <span class="wd-title-line">Web Development</span>
+                <span class="wd-title-line wd-accent">Deep Dive</span>
+            </h1>
+            <p class="wd-hero-desc">Embark on a 7-day underwater journey through the ocean of web development. Each day takes you deeper into the abyss of knowledge.</p>
+            <div class="wd-hero-stats">
+                <div class="wd-stat">
+                    <span class="wd-stat-num">7</span>
+                    <span class="wd-stat-label">Days</span>
+                </div>
+                <div class="wd-stat-divider"></div>
+                <div class="wd-stat">
+                    <span class="wd-stat-num">No of</span>
+                    <span class="wd-stat-label">Topics</span>
+                </div>
+                <div class="wd-stat-divider"></div>
+                <div class="wd-stat">
+                    <span class="wd-stat-num">∞</span>
+                    <span class="wd-stat-label">Depth</span>
+                </div>
+            </div>
+        </div>
+        <div class="wd-hero-visual">
+            <div class="wd-submarine">
+                <div class="sub-body">
+                    <div class="sub-window"></div>
+                    <div class="sub-window sub-window-2"></div>
+                </div>
+                <div class="sub-propeller">
+                    <div class="prop-blade"></div>
+                    <div class="prop-blade prop-blade-2"></div>
+                </div>
+                <div class="sub-light"></div>
+                <div class="sub-bubbles">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+        <div class="wd-scroll-hint">
+            <div class="wd-scroll-line"></div>
+            <span>Scroll to dive</span>
+        </div>
+    </header>
+
+    <!-- Timeline Section -->
+    <main class="wd-timeline-section">
+        <div class="wd-timeline-line" id="timeline-line">
+            <div class="wd-timeline-progress" id="timeline-progress"></div>
+        </div>
+
+        <!-- Day 1 -->
+        <div class="wd-day-card wd-card-left" data-day="1" data-depth="15m">
+            <div class="wd-card-connector">
+                <div class="wd-connector-line"></div>
+                <div class="wd-connector-dot">
+                    <span>1</span>
+                </div>
+            </div>
+            <div class="wd-card">
+                <div class="wd-card-glow"></div>
+                <div class="wd-card-header">
+                    <div class="wd-card-day-badge">
+                        <i class="fas fa-sun"></i>
+                        <span>Day 01</span>
+                    </div>
+                    <div class="wd-card-depth">
+                        <i class="fas fa-arrow-down"></i>
+                        <span>15m Deep</span>
+                    </div>
+                </div>
+                <div class="wd-card-icon-wrap">
+                    <div class="wd-card-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="wd-card-icon-ring"></div>
+                </div>
+                <h3 class="wd-card-title">The Surface — Basic HTML tags</h3>
+                <p class="wd-card-desc">Building the skeleton of web pages. Understanding syntax of HTML how the p, b, i, marquee, etc works. Your first breath before the dive.</p>
+                <div class="wd-card-topics">
+                    <span><i class="fas fa-check-circle"></i> Syntax (Structure)</span>
+                    <span><i class="fas fa-check-circle"></i> Basic tags</span>
+                    <span><i class="fas fa-check-circle"></i> Title & Icon</span>
+                    <span><i class="fas fa-check-circle"></i> Other HTML Basics</span>
+                </div>
+                <div class="wd-card-footer">
+                    
+                        <div >
+                           <a href="1.html" class="whati" target="_blank">What I Learn...</a>
+                        </div>
+                
+                    
+                </div>
+                <div class="wd-card-fish">
+                    <img src="fish 1.png" alt="fish">
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 2 -->
+        <div class="wd-day-card wd-card-right" data-day="2" data-depth="30m">
+            <div class="wd-card-connector">
+                <div class="wd-connector-line"></div>
+                <div class="wd-connector-dot">
+                    <span>2</span>
+                </div>
+            </div>
+            <div class="wd-card">
+                <div class="wd-card-glow"></div>
+                <div class="wd-card-header">
+                    <div class="wd-card-day-badge">
+                        <i class="fas fa-water"></i>
+                        <span>Day 02</span>
+                    </div>
+                    <div class="wd-card-depth">
+                        <i class="fas fa-arrow-down"></i>
+                        <span>30m Deep</span>
+                    </div>
+                </div>
+                <div class="wd-card-icon-wrap">
+                    <div class="wd-card-icon">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <div class="wd-card-icon-ring"></div>
+                </div>
+                <h3 class="wd-card-title">Shallow Waters — HTML Foundations</h3>
+                <p class="wd-card-desc">Learning elements, tables, media elements, anchor tags and hyperlinks.</p>
+                <div class="wd-card-topics">
+                    <span><i class="fas fa-check-circle"></i> Anchor tags</span>
+                    <span><i class="fas fa-check-circle"></i> Hyperlinks</span>
+                    <span><i class="fas fa-check-circle"></i> Media Elements</span>
+                    <span><i class="fas fa-check-circle"></i> Table</span>
+                </div>
+                <div class="wd-card-footer">
+                    
+                        <div >
+                             <a href="2.html" class="whati" target="_blank">What I Learn...</a>
+                        </div>
+                
+                    
+                </div>
+                <div class="wd-card-fish">
+                    <img src="fish 2.png" alt="fish">
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 3 -->
+        <div class="wd-day-card wd-card-left" data-day="3" data-depth="45m">
+            <div class="wd-card-connector">
+                <div class="wd-connector-line"></div>
+                <div class="wd-connector-dot">
+                    <span>3</span>
+                </div>
+            </div>
+            <div class="wd-card">
+                <div class="wd-card-glow"></div>
+                <div class="wd-card-header">
+                    <div class="wd-card-day-badge">
+                        <i class="fas fa-palette"></i>
+                        <span>Day 03</span>
+                    </div>
+                    <div class="wd-card-depth">
+                        <i class="fas fa-arrow-down"></i>
+                        <span>45m Deep</span>
+                    </div>
+                </div>
+                <div class="wd-card-icon-wrap">
+                    <div class="wd-card-icon">
+                        <i class="fab fa-css3-alt"></i>
+                    </div>
+                    <div class="wd-card-icon-ring"></div>
+                </div>
+                <h3 class="wd-card-title">Diving in Depth - Forms</h3>
+                <p class="wd-card-desc">Making forms, types of inputs, buttons, and various tags. Swim in Depth.</p>
+                <div class="wd-card-topics">
+                    <span><i class="fas fa-check-circle"></i> Forms</span>
+                    <span><i class="fas fa-check-circle"></i> Input Types</span>
+                    <span><i class="fas fa-check-circle"></i> Buttons</span>
+                    <span><i class="fas fa-check-circle"></i> Input tags</span>
+                </div>
+                <div class="wd-card-footer">
+                    
+                        <div >
+                            <a href="3.html" class="whati" target="_blank">What I Learn...</a>
+                        </div>
+                
+                    
+                </div>
+                <div class="wd-card-fish">
+                    <img src="fish 3.png" alt="fish">
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 4 -->
+        <div class="wd-day-card wd-card-right" data-day="4" data-depth="60m">
+            <div class="wd-card-connector">
+                <div class="wd-connector-line"></div>
+                <div class="wd-connector-dot">
+                    <span>4</span>
+                </div>
+            </div>
+            <div class="wd-card">
+                <div class="wd-card-glow"></div>
+                <div class="wd-card-header">
+                    <div class="wd-card-day-badge">
+                        <i class="fas fa-th-large"></i>
+                        <span>Day 04</span>
+                    </div>
+                    <div class="wd-card-depth">
+                        <i class="fas fa-arrow-down"></i>
+                        <span>60m Deep</span>
+                    </div>
+                </div>
+                <div class="wd-card-icon-wrap">
+                    <div class="wd-card-icon">
+                        <i class="fas fa-columns"></i>
+                    </div>
+                    <div class="wd-card-icon-ring"></div>
+                </div>
+                <h3 class="wd-card-title"> Coral Reef — Header, Nav, Footer with all CSS Selectors</h3>
+                <p class="wd-card-desc">Adding color and life to your pages. Selectors, box model, typography, colors, backgrounds, and making things beautiful like a coral reef.</p>
+                <div class="wd-card-topics">
+                     <span><i class="fas fa-check-circle"></i> Selectors & Specificity</span>
+                    <span><i class="fas fa-check-circle"></i> Box Model</span>
+                    <span><i class="fas fa-check-circle"></i> Typography & Colors</span>
+                    <span><i class="fas fa-check-circle"></i> Backgrounds & Borders</span>
+
+                </div>
+                 <div class="wd-card-footer">
+                    
+                        <div >
+                            <a href="4.html" class="whati" target="_blank">What I Learn...</a>
+                        </div>
+                
+                    
+                </div>
+                <div class="wd-card-fish">
+                    <img src="fish 4.png" alt="fish">
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 5 -->
+        <div class="wd-day-card wd-card-left" data-day="5" data-depth="75m">
+            <div class="wd-card-connector">
+                <div class="wd-connector-line"></div>
+                <div class="wd-connector-dot">
+                    <span>5</span>
+                </div>
+            </div>
+            <div class="wd-card">
+                <div class="wd-card-glow"></div>
+                <div class="wd-card-header">
+                    <div class="wd-card-day-badge">
+                        <i class="fas fa-bolt"></i>
+                        <span>Day 05</span>
+                    </div>
+                    <div class="wd-card-depth">
+                        <i class="fas fa-arrow-down"></i>
+                        <span>75m Deep</span>
+                    </div>
+                </div>
+                <div class="wd-card-icon-wrap">
+                    <div class="wd-card-icon">
+                        <i class="fab fa-js-square"></i>
+                    </div>
+                    <div class="wd-card-icon-ring"></div>
+                </div>
+                <h3 class="wd-card-title">Ocean Currents — Box Model, Flexbox (can add Flexbox separately)</h3>
+                <p class="wd-card-desc">Mastering modern CSS layouts. Flexbox for one-dimensional flow and CSS Grid for two-dimensional layouts — like navigating ocean currents.</p>
+                <div class="wd-card-topics">
+                    <span><i class="fas fa-check-circle"></i> Variables & Types</span>
+                    <span><i class="fas fa-check-circle"></i> Functions & Scope</span>
+                    <span><i class="fas fa-check-circle"></i> Control Flow</span>
+                    <span><i class="fas fa-check-circle"></i> Arrays & Objects</span>
+                </div>
+                 <div class="wd-card-footer">
+                    
+                        <div >
+                             <a href="5.html" class="whati" target="_blank">What I Learn...</a>
+                        </div>
+                
+                    
+                </div>
+                <div class="wd-card-fish">
+                    <img src="fish 5.png" alt="fish">
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 6 -->
+        <div class="wd-day-card wd-card-right" data-day="6" data-depth="90m">
+            <div class="wd-card-connector">
+                <div class="wd-connector-line"></div>
+                <div class="wd-connector-dot">
+                    <span>6</span>
+                </div>
+            </div>
+            <div class="wd-card">
+                <div class="wd-card-glow"></div>
+                <div class="wd-card-header">
+                    <div class="wd-card-day-badge">
+                        <i class="fas fa-sitemap"></i>
+                        <span>Day 06</span>
+                    </div>
+                    <div class="wd-card-depth">
+                        <i class="fas fa-arrow-down"></i>
+                        <span>90m Deep</span>
+                    </div>
+                </div>
+                <div class="wd-card-icon-wrap">
+                    <div class="wd-card-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <div class="wd-card-icon-ring"></div>
+                </div>
+                <h3 class="wd-card-title">Deep Currents — JavaScript basics with all operations</h3>
+                <p class="wd-card-desc">Bringing light to the deep. Control flow, functions, and making your pages come alive with interactivity.</p>
+                <div class="wd-card-topics">
+                    <span><i class="fas fa-check-circle"></i> Variables & Types</span>
+                    <span><i class="fas fa-check-circle"></i> Functions & Scope</span>
+                    <span><i class="fas fa-check-circle"></i> Control Flow</span>
+                    <span><i class="fas fa-check-circle"></i> Arrays & Objects</span>
+
+                    
+                        <div >
+                             <a href="6.js" class="whati" target="_blank">What I Learn...</a>
+                        </div>
+                
+                    
+                </div>
+                <div class="wd-card-fish">
+                    <img src="fish 6.png" alt="fish">
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 7 -->
+        <div class="wd-day-card wd-card-left" data-day="7" data-depth="100m">
+            <div class="wd-card-connector">
+                <div class="wd-connector-line"></div>
+                <div class="wd-connector-dot">
+                    <span>7</span>
+                </div>
+            </div>
+            <div class="wd-card">
+                <div class="wd-card-glow"></div>
+                <div class="wd-card-header">
+                    <div class="wd-card-day-badge">
+                        <i class="fas fa-magic"></i>
+                        <span>Day 07</span>
+                    </div>
+                    <div class="wd-card-depth">
+                        <i class="fas fa-arrow-down"></i>
+                        <span>100m Deep</span>
+                    </div>
+                </div>
+                <div class="wd-card-icon-wrap">
+                    <div class="wd-card-icon">
+                        <i class="fas fa-wand-magic-sparkles"></i>
+                    </div>
+                    <div class="wd-card-icon-ring"></div>
+                </div>
+                <h3 class="wd-card-title">Jellyfish — To-Do List Project</h3>
+                <p class="wd-card-desc">Creating a project on to-do list using html,css,javascript and bringing your knowledge to life like glowing jellyfish in the deep.</p>
+                <div class="wd-card-topics">
+                    <span><i class="fas fa-check-circle"></i> Inputs</span>
+                    <span><i class="fas fa-check-circle"></i> Functional Project</span>
+                    <span><i class="fas fa-check-circle"></i> Using html,css,js</span>
+                    <span><i class="fas fa-check-circle"></i> flexbox and div tags</span>
+                </div>
+                <div class="wd-card-footer">
+                    
+                        <div >
+                           <a href="todolist.html" class="whati" target="_blank">What I Made...</a>
+                        </div>
+                
+                    
+                </div>
+                <div class="wd-card-fish">
+                    <img src="fish 7.png" alt="fish">
+                </div>
+            </div>
+        </div>
+        
+        <!-- End marker -->
+        <div class="wd-timeline-end">
+            <div class="wd-treasure-chest">
+                <i class="fas fa-gem"></i>
+            </div>
+            <p>You've reached the deepest point!</p>
+            <a href="index.html" class="btn btn-primary btn-glow">
+                <span>Back to Surface</span>
+                <i class="fas fa-arrow-up"></i>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="wd-footer">
+        <p>&copy; 2026 Himanshu Ghuguskar — Web Development Deep Dive</p>
+    </footer>
+
+    <script src="webdev.js"></script>
+</body>
+</html>
+
+        

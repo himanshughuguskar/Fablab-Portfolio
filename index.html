@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Himanshu Ghuguskar | Portfolio</title>
+    <link rel="icon" class="icon" src="Doraemon icon.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- ==================== OCEAN INTRO ==================== -->
+    <div id="ocean-intro" class="ocean-intro">
+        <video class="ocean-video" autoplay muted loop playsinline>
+            <source src="/bgvid.mp4" type="video/mp4">
+        </video>
+        <div class="ocean-overlay"></div>
+        <canvas id="caustics-canvas" class="caustics-canvas"></canvas>
+
+        <!-- Fish with depth layers -->
+        <div class="fish-layer fish-layer-back">
+            <img class="fish fish-1" src="/fish 1.png" alt="fish">
+            <img class="fish fish-2" src="/fish 2.png" alt="fish">
+        </div>
+        <div class="fish-layer fish-layer-mid">
+            <img class="fish fish-3" src="/fish 3.png" alt="fish">
+            <img class="fish fish-4" src="/fish 4.png" alt="fish">
+            <img class="fish fish-5" src="/fish 5.png" alt="fish">
+        </div>
+        <div class="fish-layer fish-layer-front">
+            <img class="fish fish-6" src="/fish 6.png" alt="fish">
+            <img class="fish fish-7" src="/fish 7.png" alt="fish">
+        </div>
+
+        <!-- Bubbles -->
+        <div id="bubble-container" class="bubble-container"></div>
+
+        <!-- Light rays -->
+        <div class="light-rays">
+            <div class="ray ray-1"></div>
+            <div class="ray ray-2"></div>
+            <div class="ray ray-3"></div>
+            <div class="ray ray-4"></div>
+            <div class="ray ray-5"></div>
+        </div>
+
+        <!-- Jellyfish -->
+        <div class="jellyfish jelly-1">
+            <div class="jelly-body"></div>
+            <div class="jelly-tentacles">
+                <div class="tentacle"></div>
+                <div class="tentacle"></div>
+                <div class="tentacle"></div>
+                <div class="tentacle"></div>
+            </div>
+        </div>
+        <div class="jellyfish jelly-2">
+            <div class="jelly-body"></div>
+            <div class="jelly-tentacles">
+                <div class="tentacle"></div>
+                <div class="tentacle"></div>
+                <div class="tentacle"></div>
+                <div class="tentacle"></div>
+            </div>
+        </div>
+
+        <!-- Intro Content -->
+        <div class="intro-content">
+            <div class="intro-badge">
+                <i class="fas fa-water"></i>
+                <span>Portfolio</span>
+            </div>
+            <h1 class="intro-title">
+                <span class="intro-line" id="typed-line-1"></span>
+                <span class="intro-line accent glow-text" id="typed-line-2"></span>
+            </h1>
+            <p class="intro-subtitle">
+                <span class="wave-text" id="wave-subtitle"></span>
+            </p>
+            <button id="lets-go-btn" class="lets-go-btn">
+                <div class="btn-ripple"></div>
+                <span class="btn-text">Let's Go</span>
+                <div class="btn-icon-wrap">
+                    <i class="fas fa-anchor"></i>
+                </div>
+            </button>
+            <div class="intro-depth-indicator">
+                <div class="depth-line"></div>
+                <span>0m</span>
+            </div>
+        </div>
+
+        <!-- Seabed particles -->
+        <div class="seabed">
+            <div class="seaweed sw-1"></div>
+            <div class="seaweed sw-2"></div>
+            <div class="seaweed sw-3"></div>
+            <div class="seaweed sw-4"></div>
+            <div class="seaweed sw-5"></div>
+        </div>
+    </div>
+
+    <!-- ==================== MAIN PORTFOLIO ==================== -->
+    <div id="main-site" class="main-site">
+
+        <!-- Underwater ambient canvas -->
+        <canvas id="ambient-canvas" class="ambient-canvas"></canvas>
+
+        <!-- Navigation -->
+        <nav id="navbar" class="navbar">
+            <div class="nav-brand">
+                <div class="nav-logo-wrap">
+                    <span class="nav-logo">H</span>
+                    <div class="nav-logo-ring"></div>
+                </div>
+                <span class="nav-name">Himanshu</span>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#hero" class="nav-link active" data-section="hero"><span>Home</span></a></li>
+                <li><a href="#about" class="nav-link" data-section="about"><span>About</span></a></li>
+                <li><a href="#skills" class="nav-link" data-section="skills"><span>FABLAB Modules</span></a></li>
+                <li><a href="#projects" class="nav-link" data-section="projects"><span>Projects</span></a></li>
+                <li><a href="#contact" class="nav-link" data-section="contact"><span>Contact</span></a></li>
+            </ul>
+            <button class="nav-toggle" id="nav-toggle">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="hero-particles" id="hero-particles"></div>
+            <div class="hero-waves">
+                <svg class="hero-wave wave-1" viewBox="0 0 1440 120" preserveAspectRatio="none">
+                    <path d="M0,60 C360,120 720,0 1080,60 C1260,90 1380,30 1440,60 L1440,120 L0,120 Z" fill="rgba(0,247,255,0.03)"/>
+                </svg>
+                <svg class="hero-wave wave-2" viewBox="0 0 1440 120" preserveAspectRatio="none">
+                    <path d="M0,80 C240,20 480,100 720,60 C960,20 1200,100 1440,40 L1440,120 L0,120 Z" fill="rgba(0,119,255,0.03)"/>
+                </svg>
+            </div>
+            <div class="hero-content">
+                <div class="hero-image-wrapper" id="hero-image-tilt">
+                    <div class="hero-image-glow"></div>
+                    <div class="hero-image-rings">
+                        <div class="ring ring-1"></div>
+                        <div class="ring ring-2"></div>
+                        <div class="ring ring-3"></div>
+                    </div>
+                    <img class="hero-image" src="HG Profile Photo.jpeg" alt="Himanshu Ghuguskar">
+                    <div class="hero-image-bubbles">
+                        <span></span><span></span><span></span><span></span><span></span>
+                    </div>
+                </div>
+                <div class="hero-text">
+                    <p class="hero-greeting"><i class="fas fa-water"></i> Hello, I'm</p>
+                    <h1 class="hero-name">
+                        <span class="name-part" data-delay="0">H</span><span class="name-part" data-delay="50">i</span><span class="name-part" data-delay="100">m</span><span class="name-part" data-delay="150">a</span><span class="name-part" data-delay="200">n</span><span class="name-part" data-delay="250">s</span><span class="name-part" data-delay="300">h</span><span class="name-part" data-delay="350">u</span>
+                        <br>
+                        <span class="name-accent name-part" data-delay="500">G</span><span class="name-accent name-part" data-delay="550">h</span><span class="name-accent name-part" data-delay="600">u</span><span class="name-accent name-part" data-delay="650">g</span><span class="name-accent name-part" data-delay="700">u</span><span class="name-accent name-part" data-delay="750">s</span><span class="name-accent name-part" data-delay="800">k</span><span class="name-accent name-part" data-delay="850">a</span><span class="name-accent name-part" data-delay="900">r</span>
+                    </h1>
+                    <div class="hero-role-wrap">
+                        <div class="role-line"></div>
+                        <p class="hero-role">Digital Fablab Studio</p>
+                        <div class="role-line"></div>
+                    </div>
+                    <p class="hero-description">Passionate creator blending technology with art. Exploring the depths of digital fabrication, design, and innovation — like an ocean of possibilities.</p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary btn-glow">
+                            <span>View Projects</span>
+                            <i class="fas fa-compass"></i>
+                        </a>
+                        <a href="#contact" class="btn btn-outline btn-wave">
+                            <span>Get in Touch</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </a>
+                    </div>
+                    <div class="hero-socials">
+                        <a href="https://github.com/himanshughuguskar" class="social-link" data-tooltip="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/himanshu-ghuguskar-060342384?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="social-link" data-tooltip="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/himanshu_ghuguskar?igsh=OGYzeW9lbzd1anFz" class="social-link" data-tooltip="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="mouse-wheel"></div>
+                </div>
+                <p>Dive Deeper</p>
+                <div class="scroll-arrow">
+                    <i class="fas fa-chevron-down"></i>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wave Divider -->
+        <div class="wave-divider">
+            <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+                <path d="M0,50 C180,100 360,0 540,50 C720,100 900,0 1080,50 C1260,100 1380,25 1440,50 L1440,100 L0,100 Z" fill="rgba(0,0,0,0.15)"/>
+            </svg>
+        </div>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="section-container">
+                <div class="section-header reveal-up">
+                    <span class="section-tag"><i class="fas fa-anchor"></i> Who Am I</span>
+                    <h2 class="section-title">About <span class="accent">Me</span></h2>
+                </div>
+                <div class="about-grid">
+                    <div class="about-text reveal-left">
+                        <p>I'm a passionate digital creator from the <span class="accent">Digital Fablab Studio</span>. I love turning ideas into reality through technology, design, and hands-on fabrication.</p>
+                        <p>My journey spans across web development,PCB Designing, 3D printing, laser cutting, and creative coding. I believe in learning by making and sharing knowledge with the community.</p>
+                        <div class="about-stats">
+                            <div class="stat" data-count="1">
+                                <span class="stat-number">0</span>
+                                <span class="stat-plus"></span>
+                                <span class="stat-label">Projects</span>
+                            </div>
+                            <div class="stat" data-count="5">
+                                <span class="stat-number">0</span>
+                                <span class="stat-plus">+</span>
+                                <span class="stat-label">Skills</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number stat-infinity">∞</span>
+                                <span class="stat-plus"></span>
+                                <span class="stat-label">Curiosity</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image-container reveal-right">
+                        <div class="about-image-card">
+                            <img src="/profile photo.jpeg" alt="Himanshu" class="about-image">
+                            <div class="about-image-border"></div>
+                            <div class="about-image-float">
+                                <div class="float-bubble fb-1"></div>
+                                <div class="float-bubble fb-2"></div>
+                                <div class="float-bubble fb-3"></div>
+                            </div>
+                            <div class="about-image-badge">
+                                <i class="fas fa-fish"></i>
+                                <span>Creator</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wave Divider -->
+        <div class="wave-divider wave-divider-reverse">
+            <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+                <path d="M0,50 C180,0 360,100 540,50 C720,0 900,100 1080,50 C1260,0 1380,75 1440,50 L1440,0 L0,0 Z" fill="rgba(0,0,0,0.15)"/>
+            </svg>
+        </div>
+
+        <div class="card1">
+            <div>
+               
+            </div>
+            <div>
+               <p class="cardheading" style="font-size: 20px;">EDUCATION<br><br><br>
+                  SHRI SANT GAJANAN MAHARAJ COLLEGE OF ENGINEERING, SHEGAON <br>
+                  Electronics and Telecommunication Engineering<br>
+                  2025-2029<br><br>
+                  DR. AMBEDKAR COLLEGE, NAGPUR<br>
+                  Higher Secondary Education (12th)<br>
+                  69.33% (2025)<br><br>
+                  SILVER OAK INTERNATIONAL SCHOOL, UMRED<br>
+                  Secondary School Education (10th)<br>
+                  93% (2023)<br>
+	            
+                </div>
+                </div>
+                <br><br><br><br><br><br><br>
+
+         <div class="card">
+            <div>
+                <img src="Fablab logo white.png" width="400px">
+            </div>
+            <div>
+               <p class="cardheading">FABLAB STUDENT AGREEMENT<br><br>
+                   The FabLab, SSGMCE is responsible for:<br>
+	            •	Teaching principles and practices of digital fabrication<br>
+	            •	Arranging lectures, recitations, meetings, and events for the class<br>
+	            •	Evaluating and providing feedback on student work<br>
+	            •	Offering clear standards for completing assignments<br>
+	            •	Certifying and archiving student progress<br>
+	            •	Supervising class preparation<br>
+	            •	Reviewing prospective students, instructors, and labs<br>
+	            •	Providing central staff and infrastructure for students, instructors, and labs<br>
+	            •	Fund-raising for costs not covered by student tuition<br>
+	            •	Managing and reporting on the programs finances, results, and impacts<br>
+	            •	Publicizing the program<br>
+
+
+                  I am a FabLab, SSGMCE student, responsible for:<br>
+	            •	Attending class lectures and participating in reviews<br>
+	            •	Developing and documenting projects assigned to introduce and demonstrate skills<br>
+	            •	Honestly reporting on my work, and appropriately attributing the work of others<br>
+	            •	Working safely<br>
+	            •	Leaving workspaces in the same (or better) condition than I found them<br>
+	            •	Participating in the upkeep of my lab<br>
+	            •	Ensuring that my tuition to cover local and central class costs is covered<br>
+	            •	Following locally applicable health and safety guidance<br>
+	            •	Promoting a respectful environment free of harassment and discrimination<br>
+
+
+                  ✍️ Declaration<br>
+
+                  Signed by committing this file in my repository,<br>
+
+                  Name: HIMANSHU SANJAY GHUGUSKAR</p>
+
+                </div>
+                </div>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills">
+            <div class="section-container">
+                <div class="section-header reveal-up">
+                    <span class="section-tag"><i class="fas fa-compass"></i> What I Do</span>
+                    <h2 class="section-title">My <span class="accent">FABLAB MODULES</span></h2>
+                </div>
+                <div class="skills-grid">
+                    <a href="webdev.html" class="skill-card reveal-scale skill-card-link" data-tilt>
+                    <div class="skill-card reveal-scale" data-tilt>
+                        <div class="skill-card-glow"></div>
+                        <div class="skill-icon"><i class="fas fa-code"></i></div>
+                        <h3>Web Development</h3>
+                        <p>HTML, CSS, JavaScript — building interactive and responsive websites from scratch.</p>
+                        
+                        
+                        </div>
+                    </a>
+                    <div class="skill-card reveal-scale" data-tilt>
+                        <div class="skill-card-glow"></div>
+                        <div class="skill-icon"><i class="fas fa-cube"></i></div>
+                        <h3>3D Printing</h3>
+                        <p>Designing and fabricating 3D models using FDM and resin printing technologies.</p>
+                        <div>
+                    </div>
+                    </div>
+                     <div class="skill-card reveal-scale" data-tilt>
+                        <div class="skill-card-glow"></div>
+                        <div class="skill-icon"><i class="fas fa-cube"></i></div>
+                        <h3>AutoCAD</h3>
+                        <p>The fundamentals of 2D drafting and 3D modeling to create precise digital designs.</p>
+                        <div>
+                    </div>
+                    </div>
+                     <div class="skill-card reveal-scale" data-tilt>
+                        <div class="skill-card-glow"></div>
+                        <div class="skill-icon"><i class="fas fa-cube"></i></div>
+                        <h3>Networking</h3>
+                        <p>Acquiring skills to design, build, and manage interconnected computer systems that enable data sharing and communication.</p>
+                        <div>
+                    </div>
+                    </div>
+                     <div class="skill-card reveal-scale" data-tilt>
+                        <div class="skill-card-glow"></div>
+                        <div class="skill-icon"><i class="fas fa-cube"></i></div>
+                        <h3>JAVA</h3>
+                        <p>An aspiring developer acquiring the foundational skills to build versatile, object-oriented applications using the "write once, run anywhere" programming language.</p>
+                        <div>
+                    </div>
+                    </div>
+                     <div class="skill-card reveal-scale" data-tilt>
+                        <div class="skill-card-glow"></div>
+                        <div class="skill-icon"><i class="fas fa-cube"></i></div>
+                        <h3>IoT & Embedded Systems</h3>
+                        <p>Studies the integration of sensors, microcontrollers, and connectivity to create intelligent, networked devices.</p>
+                        <div>
+                    </div>
+                    </div>
+                    <div class="skill-card reveal-scale" data-tilt>
+                        <div class="skill-card-glow"></div>
+                        <div class="skill-icon"><i class="fas fa-microchip"></i></div>
+                        <h3>PCB Designing</h3>
+                        <p>Arduino, sensors, and circuit design for interactive projects and IoT solutions.</p>
+                        <div>
+                        </div>
+                    </div>
+                    <div class="skill-card reveal-scale" data-tilt>
+                        <div class="skill-card-glow"></div>
+                        <div class="skill-icon"><i class="fas fa-cut"></i></div>
+                        <h3>Computer Aided Laser Cutting</h3>
+                        <p>Precision cutting and engraving for prototyping and artistic creations.</p>
+                        <div>  
+                        </div>
+                    </div>
+                    <div class="skill-card reveal-scale" data-tilt>
+                        <div class="skill-card-glow"></div>
+                        <div class="skill-icon"><i class="fas fa-paint-brush"></i></div>
+                        <h3>UI/UX Design</h3>
+                        <p>UI/UX design, graphic design, and creative visual storytelling.</p>
+                        <div>
+                        </div>
+                    </div>
+                    <div class="skill-card reveal-scale" data-tilt>
+                        <div class="skill-card-glow"></div>
+                        <div class="skill-icon"><i class="fas fa-lightbulb"></i></div>
+                        <h3>AI/ML</h3>
+                        <p>AI or software entity that analyzes conversation patterns and user data to autonomously improve its conversational capabilities and personalize interactions.</p>
+                        <div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wave Divider -->
+        <div class="wave-divider">
+            <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+                <path d="M0,50 C180,100 360,0 540,50 C720,100 900,0 1080,50 C1260,100 1380,25 1440,50 L1440,100 L0,100 Z" fill="rgba(0,0,0,0.15)"/>
+            </svg>
+        </div>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <div class="section-container">
+                <div class="section-header reveal-up">
+                    <span class="section-tag"><i class="fas fa-ship"></i> My Work</span>
+                    <h2 class="section-title">My <span class="accent">Projects</span></h2>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card reveal-scale" data-tilt>
+                        <div class="project-image">
+                            <img src="touch sensor.png" alt="Project 1">
+                            <div class="project-overlay">
+                                <div class="project-overlay-content">
+                                </div>
+                            </div>
+                            <div class="project-number">01</div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Touch Sensor circuit</h3>
+                            <p>An mini project made using transistor NPN 547 and other electronic components.</p>
+                            <div class="project-tags">
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Wave Divider -->
+        <div class="wave-divider wave-divider-reverse">
+            <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+                <path d="M0,50 C180,0 360,100 540,50 C720,0 900,100 1080,50 C1260,0 1380,75 1440,50 L1440,0 L0,0 Z" fill="rgba(0,0,0,0.15)"/>
+            </svg>
+        </div>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="section-container">
+                <div class="section-header reveal-up">
+                    <span class="section-tag"><i class="fas fa-envelope"></i> Reach Out</span>
+                    <h2 class="section-title">Get in <span class="accent">Touch</span></h2>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-info reveal-left">
+                        <div class="contact-item">
+                            <div class="contact-icon-wrap">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <p><a type="email" href="mailto:himanshughuguskar@gmail.com">himanshughuguskar100@gmail.com</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon-wrap">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Digital Fablab Studio</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon-wrap">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+91 9503203322</p>
+                            </div>
+                        </div>
+                        <div class="contact-map-decoration">
+                            <i class="fas fa-globe-americas"></i>
+                        </div>
+                    </div>
+                    <form class="contact-form reveal-right" id="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Your Name</label>
+                                <input type="text" placeholder="John Doe" required>
+                                <div class="form-line"></div>
+                            </div>
+                            <div class="form-group">
+                                <label>Your Email</label>
+                                <input type="email" placeholder="himanshu@example.com" required>
+                                <div class="form-line"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Subject</label>
+                            <input type="text" placeholder="What's this about?" required>
+                            <div class="form-line"></div>
+                        </div>
+                        <div class="form-group">
+                            <label>Your Message</label>
+                            <textarea placeholder="Tell me about your project..." rows="5" required></textarea>
+                            <div class="form-line"></div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-glow btn-full">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-wave">
+                <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+                    <path d="M0,30 C360,60 720,0 1080,30 C1260,45 1380,15 1440,30 L1440,60 L0,60 Z" fill="rgba(0,0,0,0.3)"/>
+                </svg>
+            </div>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="nav-logo-wrap">
+                        <span class="nav-logo">H</span>
+                        <div class="nav-logo-ring"></div>
+                    </div>
+                    <div class="footer-brand-text">
+                        <p class="footer-name">Himanshu Ghuguskar</p>
+                        <p class="footer-tagline">Digital Fablab Studio</p>
+                    </div>
+                </div>
+                <div class="footer-nav">
+                    <a href="#hero">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#skills">FABLAB Modules</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://github.com/himanshughuguskar"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/himanshu-ghuguskar-060342384?utm_source=share_via&utm_content=profile&utm_medium=member_android"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/himanshu_ghuguskar?igsh=OGYzeW9lbzd1anFz"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="footer-divider"></div>
+                <p class="footer-copy">&copy; 2026 Himanshu Ghuguskar. Crafted with <i class="fas fa-heart accent"></i></p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Custom cursor -->
+    <div class="custom-cursor" id="cursor"></div>
+    <div class="custom-cursor-trail" id="cursor-trail"></div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="script.js"></script>
+</body>
+</html>
