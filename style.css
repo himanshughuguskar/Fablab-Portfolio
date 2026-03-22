@@ -329,7 +329,6 @@ body {
     /* Adjust these values to change glow size and color */
     box-shadow: 0 0 30px 10px rgba(0, 255, 255, 0.6); 
     display: flex;
-    left: 27%;
     justify-content: center;
     align-items: center;
   }
