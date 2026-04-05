@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI/UX Design Journey | Projects Deep Dive</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="uiux.css">
+</head>
+<body>
+
+    <!-- Ambient background -->
+    <canvas id="ux-bg-canvas" class="underwater-bg"></canvas>
+
+    <!-- Floating particles layer -->
+    <div id="ux-bubbles-layer" class="bubbles-layer"></div>
+
+    <!-- Navigation -->
+    <nav class="ux-nav" id="ux-nav">
+        <a href="index.html" class="ux-nav-back">
+            <i class="fas fa-arrow-left"></i>
+            <span>Back to Portfolio</span>
+        </a>
+        <div class="ux-nav-brand">
+            <div class="ux-nav-logo">
+                <i class="fas fa-pen-nib"></i>
+            </div>
+            <span>UI/UX Journey</span>
+        </div>
+        <div class="ux-nav-meter" id="ux-nav-meter">
+            <i class="fas fa-palette"></i>
+            <span id="ux-meter-value">0%</span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="ux-hero">
+        <div class="ux-hero-content">
+            <div class="ux-hero-badge">
+                <i class="fas fa-magic"></i>
+                <span>UI/UX Design Module</span>
+            </div>
+            <h1 class="ux-hero-title">
+                <span class="ux-title-line">UI/UX Design</span>
+                <span class="ux-title-line ux-accent">Crafted Here</span>
+            </h1>
+            <p class="ux-hero-desc">Diving deep into the art of user experience. From wireframes to polished interfaces — two real projects that brought design thinking to life.</p>
+            <div class="ux-hero-stats">
+                <div class="ux-stat">
+                    <span class="ux-stat-num">2</span>
+                    <span class="ux-stat-label">Projects</span>
+                </div>
+                <div class="ux-stat-divider"></div>
+                <div class="ux-stat">
+                    <span class="ux-stat-num">&#8734;</span>
+                    <span class="ux-stat-label">Iterations</span>
+                </div>
+                <div class="ux-stat-divider"></div>
+                <div class="ux-stat">
+                    <span class="ux-stat-num">100%</span>
+                    <span class="ux-stat-label">Passion</span>
+                </div>
+            </div>
+        </div>
+        <div class="ux-hero-visual">
+            <div class="ux-palette">
+                <div class="palette-body">
+                    <div class="palette-thumb-hole"></div>
+                    <div class="palette-dots">
+                        <div class="palette-dot"></div>
+                        <div class="palette-dot"></div>
+                        <div class="palette-dot"></div>
+                        <div class="palette-dot"></div>
+                        <div class="palette-dot"></div>
+                        <div class="palette-dot"></div>
+                    </div>
+                </div>
+                <div class="palette-brush"></div>
+                <div class="palette-sparkles">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+        <div class="ux-scroll-hint">
+            <div class="ux-scroll-line"></div>
+            <span>Scroll to explore</span>
+        </div>
+    </header>
+
+    <!-- Section Heading -->
+    <div class="ux-section-heading">
+        <div class="ux-heading-pill">
+            <i class="fas fa-layer-group"></i>
+            <span>Completed Projects</span>
+        </div>
+        <h2>What I <span class="ux-accent">Built</span></h2>
+        <p>Two hands-on UI/UX projects completed during the module — each one a deep dive into real design problems, tools, and user-centered thinking.</p>
+    </div>
+
+    <!-- Projects Section -->
+    <section class="ux-projects-section">
+
+        <!-- Project 1 -->
+        <div class="ux-project" id="proj-1">
+            <div class="ux-project-preview">
+                <div class="preview-bg preview-p1"></div>
+                <div class="preview-mockup">
+                    <div class="mockup-phones">
+                        <div class="phone phone-left">
+                            <div class="phone-screen">
+                                <div class="phone-notch"></div>
+                                <div class="phone-ui-bar pink"></div>
+                                <div class="phone-ui-bar short"></div>
+                                <div class="phone-ui-card"></div>
+                            </div>
+                        </div>
+                        <div class="phone phone-main">
+                            <div class="phone-screen">
+                                <div class="phone-notch"></div>
+                                <div class="phone-ui-bar pink"></div>
+                                <div class="phone-ui-bar purple"></div>
+                                <div class="phone-ui-bar short"></div>
+                                <div class="phone-ui-card"></div>
+                                <div class="phone-ui-card" style="margin-top:6px;opacity:0.5;height:25px;"></div>
+                            </div>
+                        </div>
+                        <div class="phone phone-right">
+                            <div class="phone-screen">
+                                <div class="phone-notch"></div>
+                                <div class="phone-ui-bar purple"></div>
+                                <div class="phone-ui-bar short"></div>
+                                <div class="phone-ui-card"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ux-project-info" id="proj-info-1">
+                <div class="proj-number">01</div>
+                <span class="proj-tag"><i class="fas fa-mobile-alt"></i> Basics & Foundation</span>
+                <h2 class="proj-title">Baics of UI/UX in Figma &mdash; Design</h2>
+                <p class="proj-desc">Focused on reducing friction in the ordering flow, improving visual hierarchy, and creating a consistent design system from scratch.</p>
+                <div class="proj-skills">
+                    <span class="proj-skill"><i class="fas fa-check-circle"></i> Wireframing</span>
+                    <span class="proj-skill"><i class="fas fa-check-circle"></i> Prototyping</span>
+                    <span class="proj-skill"><i class="fas fa-check-circle"></i> Color Theory</span>
+                    <span class="proj-skill"><i class="fas fa-check-circle"></i> Typography</span>
+                    <span class="proj-skill"><i class="fas fa-check-circle"></i> Design Systems</span>
+                </div>
+                <div class="proj-highlights">
+                    <div class="proj-highlight">
+                        <i class="fas fa-arrow-right"></i>
+                        <span>Learnt the Basics of UI/UX</span>
+                    </div>
+                    <div class="proj-highlight">
+                        <i class="fas fa-arrow-right"></i>
+                        <span>Basic using of Figma</span>
+                    </div>
+                </div>
+                <div class="proj-actions">
+                    <a href="https://www.figma.com/design/HcBdxUqtj8hutJ039FU2BM/UI-UX?node-id=0-1&t=Z7QjUr4k8PHfHn3q-1" class="proj-btn proj-btn-primary" target="_blank">
+                        <i class="fas fa-eye"></i> View Project
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 2 (flipped layout) -->
+        <div class="ux-project flip" id="proj-2">
+            <div class="ux-project-preview">
+                <div class="preview-bg preview-p2"></div>
+                <div class="preview-mockup">
+                    <div class="mockup-browser">
+                        <div class="browser-bar">
+                            <div class="browser-dot"></div>
+                            <div class="browser-dot"></div>
+                            <div class="browser-dot"></div>
+                            <div class="browser-url"></div>
+                        </div>
+                        <div class="browser-content">
+                            <div class="browser-hero-line big"></div>
+                            <div class="browser-hero-line med"></div>
+                            <div class="browser-hero-line small"></div>
+                            <div class="browser-btn-mock"></div>
+                            <div class="browser-cards-row">
+                                <div class="browser-mini-card"></div>
+                                <div class="browser-mini-card"></div>
+                                <div class="browser-mini-card"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ux-project-info" id="proj-info-2">
+                <div class="proj-number">02</div>
+                <span class="proj-tag" style="border-color:rgba(0,247,255,0.2);color:#00f7ff;background:rgba(0,247,255,0.08);">
+                    <i class="fas fa-desktop"></i> Landing Page UI/UX
+                </span>
+                <h2 class="proj-title">Red Bull &mdash; Product Website</h2>
+                <p class="proj-desc">Designed a high-converting landing page for a fictitious SaaS product. Applied UX writing principles, visual storytelling, and conversion-focused layouts to guide users from first glance to sign-up.</p>
+                <div class="proj-skills">
+                    <span class="proj-skill" style="border-color:rgba(0,247,255,0.12);">
+                        <i class="fas fa-check-circle" style="color:#00f7ff;"></i> UX Writing
+                    </span>
+                    <span class="proj-skill" style="border-color:rgba(0,247,255,0.12);">
+                        <i class="fas fa-check-circle" style="color:#00f7ff;"></i> Layout Design
+                    </span>
+                    <span class="proj-skill" style="border-color:rgba(0,247,255,0.12);">
+                        <i class="fas fa-check-circle" style="color:#00f7ff;"></i> Prototype & Animation
+                    </span>
+                    <span class="proj-skill" style="border-color:rgba(0,247,255,0.12);">
+                        <i class="fas fa-check-circle" style="color:#00f7ff;"></i> Responsive Design
+                    </span>
+                </div>
+                <div class="proj-highlights">
+                    <div class="proj-highlight">
+                        <i class="fas fa-arrow-right" style="color:#00f7ff;"></i>
+                        <span>Mapped user personas and built content hierarchy around them</span>
+                    </div>
+                    <div class="proj-highlight">
+                        <i class="fas fa-arrow-right" style="color:#00f7ff;"></i>
+                        <span>Fully responsive across mobile, tablet and desktop breakpoints</span>
+                    </div>
+                </div>
+                <div class="proj-actions">
+                    <a href="https://www.figma.com/design/LVraUy48ESbfAeOsSlGKdO/Red-Bull?node-id=0-1&t=FF6Vs1OheUdDZMIT-1" class="proj-btn proj-btn-primary" style="background:linear-gradient(135deg,#00f7ff,#0077ff);color:#050d1a;" target="_blank">
+                        <i class="fas fa-eye"></i> View Project
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    
+
+     <!-- Project 3 -->
+        <div class="ux-project" id="proj-1">
+            <div class="ux-project-preview">
+                <div class="preview-bg preview-p1"></div>
+                <div class="preview-mockup">
+                    <div class="mockup-phones">
+                        <div class="phone phone-left">
+                            <div class="phone-screen">
+                                <div class="phone-notch"></div>
+                                <div class="phone-ui-bar pink"></div>
+                                <div class="phone-ui-bar short"></div>
+                                <div class="phone-ui-card"></div>
+                            </div>
+                        </div>
+                        <div class="phone phone-main">
+                            <div class="phone-screen">
+                                <div class="phone-notch"></div>
+                                <div class="phone-ui-bar pink"></div>
+                                <div class="phone-ui-bar purple"></div>
+                                <div class="phone-ui-bar short"></div>
+                                <div class="phone-ui-card"></div>
+                                <div class="phone-ui-card" style="margin-top:6px;opacity:0.5;height:25px;"></div>
+                            </div>
+                        </div>
+                        <div class="phone phone-right">
+                            <div class="phone-screen">
+                                <div class="phone-notch"></div>
+                                <div class="phone-ui-bar purple"></div>
+                                <div class="phone-ui-bar short"></div>
+                                <div class="phone-ui-card"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ux-project-info" id="proj-info-1">
+                <div class="proj-number">03</div>
+                <span class="proj-tag"><i class="fas fa-mobile-alt"></i> ArduinoVerse</span>
+                <h2 class="proj-title">ArduinoVerse &mdash; Arduino Purchasing Website</h2>
+                <p class="proj-desc">Redesigned the end-to-end user journey of a arduino purchasing app. Focused on reducing friction in the ordering flow, improving visual hierarchy, and creating a consistent design system from scratch.</p>
+                <div class="proj-skills">
+                    <span class="proj-skill"><i class="fas fa-check-circle"></i> Wireframing</span>
+                    <span class="proj-skill"><i class="fas fa-check-circle"></i> Prototyping</span>
+                    <span class="proj-skill"><i class="fas fa-check-circle"></i> UX Rules</span>
+                    <span class="proj-skill"><i class="fas fa-check-circle"></i> Typography</span>
+                    <span class="proj-skill"><i class="fas fa-check-circle"></i> UX Case Study</span>
+                </div>
+                <div class="proj-highlights">
+                    <div class="proj-highlight">
+                        <i class="fas fa-arrow-right"></i>
+                        <span>Designed complete UI for a product purchasing website</span>
+                    </div>
+                    <div class="proj-highlight">
+                        <i class="fas fa-arrow-right"></i>
+                        <span>Used the knowledge of UX Case Studies</span>
+                    </div>
+                </div>
+                <div class="proj-actions">
+                    <a href="https://www.figma.com/design/qLwoMfpDn093jVj0XP4w1Z/ArduinoVerse?node-id=0-1&t=O0FCtO82eWMkwwZe-1" class="proj-btn proj-btn-primary" target="_blank">
+                        <i class="fas fa-eye"></i> View Project
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Tools Spotlight -->
+    <div class="ux-tools-section">
+        <h3>Tools &amp; Concepts Explored</h3>
+        <div class="ux-tools-grid">
+            <div class="ux-tool-chip"><i class="fab fa-figma"></i> Figma</div>
+            <div class="ux-tool-chip"><i class="fas fa-vector-square"></i> Wireframing</div>
+            <div class="ux-tool-chip"><i class="fas fa-users"></i> User Research</div>
+            <div class="ux-tool-chip"><i class="fas fa-sitemap"></i> Prototype</div>
+            <div class="ux-tool-chip"><i class="fas fa-universal-access"></i> Accessibility</div>
+            <div class="ux-tool-chip"><i class="fas fa-paint-brush"></i> Visual Design</div>
+            <div class="ux-tool-chip"><i class="fas fa-mobile-alt"></i> Responsive UI</div>
+            <div class="ux-tool-chip"><i class="fas fa-vial"></i> Usability Testing</div>
+        </div>
+    </div>
+
+    <!-- End Section -->
+    <div class="ux-section-end">
+        <div class="ux-trophy">
+            <i class="fas fa-trophy"></i>
+        </div>
+        <p>Module Complete &mdash; Design thinking unlocked!</p>
+        <a href="index.html" class="btn-end">
+            <span>Back to Portfolio</span>
+            <i class="fas fa-arrow-up"></i>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="ux-footer">
+        <p>&copy; 2026 Himanshu Ghuguskar &mdash; UI/UX Design Module</p>
+    </footer>
+
+    <script src="uiux.js"></script>
+</body>
+</html>
