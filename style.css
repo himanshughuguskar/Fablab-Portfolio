@@ -342,6 +342,7 @@ body {
     border: 3px solid #00ffff; /* Optional border for extra definition */
   }
 
+
 .intro-content {
     position: relative;
     z-index: 10;
@@ -1030,127 +1031,523 @@ body {
 }
 
 /* Fablab agreement card */ 
-.card {
-  position: relative;
-  width: 1250px;
-  height: 600px;
-  justify-self: center;
-  background-color: #0a1628;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding: 12px;
-  gap: 12px;
-  border-radius: 8px;
-  cursor: pointer;
+/* ==================== EDUCATION SECTION ==================== */
+.edu-section {
+    position: relative;
+    padding: 100px 0 80px;
+    background: linear-gradient(180deg, #0a1628 0%, #0d1f3c 50%, #0a1628 100%);
+    overflow: hidden;
 }
 
-.card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  left: -5px;
-  margin: auto;
-  width: 1250px;
-  height: 600PX;
-  border-radius: 10px;
-  background: linear-gradient(-45deg, rgb(7, 4, 23) 0%, rgb(47, 71, 104) 100%);
-  z-index: -10;
-  pointer-events: none;
-  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+.edu-bubbles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0; left: 0;
+    pointer-events: none;
 }
 
-.card::after {
-  content: "";
-  z-index: -1;
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(-45deg, rgb(128, 153, 131) 0%, rgb(47, 71, 104) 100%);
-  transform: translate3d(0, 0, 0) scale(0.95) scaleX(0.02) scaleY(0.002);
-  filter: blur(20px);
+.edu-bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,247,255,0.15) 0%, transparent 70%);
+    animation: eduBubbleRise var(--dur, 9s) var(--delay, 0s) infinite ease-in-out;
+}
+.edu-bubble:nth-child(1) { width: 18px; height: 18px; left: 8%; bottom: 0; --dur: 8s; --delay: 0s; }
+.edu-bubble:nth-child(2) { width: 10px; height: 10px; left: 22%; bottom: 0; --dur: 11s; --delay: 2s; }
+.edu-bubble:nth-child(3) { width: 14px; height: 14px; left: 45%; bottom: 0; --dur: 7s; --delay: 1s; }
+.edu-bubble:nth-child(4) { width: 8px;  height: 8px;  left: 65%; bottom: 0; --dur: 13s; --delay: 3s; }
+.edu-bubble:nth-child(5) { width: 20px; height: 20px; left: 78%; bottom: 0; --dur: 9s; --delay: 0.5s; }
+.edu-bubble:nth-child(6) { width: 12px; height: 12px; left: 90%; bottom: 0; --dur: 10s; --delay: 4s; }
+
+@keyframes eduBubbleRise {
+    0%   { transform: translateY(0) translateX(0); opacity: 0; }
+    10%  { opacity: 0.8; }
+    90%  { opacity: 0.4; }
+    100% { transform: translateY(-110vh) translateX(20px); opacity: 0; }
 }
 
-.cardheading {
-  font-size: 80px;
-  text-transform: capitalize;
-  font-weight: 700;
+.edu-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 820px;
+    margin: 60px auto 0;
+    position: relative;
 }
 
-.card p:not(.heading) {
-  font-size: 14px;
+.edu-item {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
 }
 
-.card p:last-child {
-  color: #ffffff;
-  font-weight: 600;
+.edu-item:nth-child(even) {
+    flex-direction: row-reverse;
 }
 
-.card:hover::after {
-  filter: blur(30px);
+.edu-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    padding-top: 6px;
 }
 
-.card:hover::before {
-  transform: rotate(-90deg) scaleX(0.34) scaleY(0.77);
- 
+.edu-node {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #001a2e, #0d2b4e);
+    border: 2px solid rgba(0,247,255,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00f7ff;
+    font-size: 18px;
+    box-shadow: 0 0 20px rgba(0,247,255,0.25), inset 0 0 12px rgba(0,247,255,0.08);
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
 }
 
-
-.card1 {
-  position: relative;
-  width: 600px;
-  height: 600px;
-  justify-self: center;
-  background-color: #0a1628;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding: 12px;
-  gap: 12px;
-  border-radius: 8px;
-  cursor: pointer;
+.edu-node::before {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,247,255,0.15);
+    animation: eduNodePulse 3s ease-in-out infinite;
 }
 
-.card1::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  left: -5px;
-  margin: auto;
-  width: 620px;
-  height: 620PX;
-  border-radius: 10px;
-  background: linear-gradient(-45deg, rgb(7, 4, 23) 0%, rgb(47, 71, 104) 100%);
-  z-index: -10;
-  pointer-events: none;
-  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+@keyframes eduNodePulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.2); opacity: 0; }
 }
 
-.card1::after {
-  content: "";
-  z-index: -1;
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(-45deg, rgb(128, 153, 131) 0%, rgb(47, 71, 104) 100%);
-  transform: translate3d(0, 0, 0) scale(0.95) scaleX(0.02) scaleY(0.002);
-  filter: blur(20px);
+.edu-line {
+    width: 2px;
+    flex: 1;
+    min-height: 40px;
+    background: linear-gradient(180deg, rgba(0,247,255,0.4) 0%, rgba(0,119,255,0.1) 100%);
+    margin-top: 6px;
 }
 
-.card1 p:not(.heading) {
-  font-size: 14px;
+.edu-card {
+    flex: 1;
+    position: relative;
+    background: linear-gradient(135deg, rgba(10,22,40,0.95) 0%, rgba(13,31,60,0.9) 100%);
+    border: 1px solid rgba(0,247,255,0.18);
+    border-radius: 20px;
+    padding: 28px 32px;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card1 p:last-child {
-  color: #ffffff;
-  font-weight: 600;
+.edu-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0,247,255,0.45);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 30px rgba(0,247,255,0.12);
 }
 
-.card1:hover::after {
-  filter: blur(30px);
+.edu-card-glow {
+    position: absolute;
+    top: -40px; left: -40px;
+    width: 160px; height: 160px;
+    background: radial-gradient(circle, rgba(0,247,255,0.08) 0%, transparent 70%);
+    pointer-events: none;
 }
 
-.card1:hover::before {
-  transform: rotate(-90deg) scaleX(0.34) scaleY(0.77);
- 
+.edu-card-bubbles {
+    position: absolute;
+    bottom: 10px; right: 14px;
+    display: flex;
+    gap: 5px;
+    pointer-events: none;
+}
+
+.edu-card-bubbles span {
+    display: block;
+    border-radius: 50%;
+    background: rgba(0,247,255,0.12);
+    border: 1px solid rgba(0,247,255,0.2);
+    animation: cardBubbleDrift 4s ease-in-out infinite;
+}
+
+.edu-card-bubbles span:nth-child(1) { width: 8px; height: 8px; animation-delay: 0s; }
+.edu-card-bubbles span:nth-child(2) { width: 5px; height: 5px; animation-delay: 0.7s; }
+.edu-card-bubbles span:nth-child(3) { width: 10px; height: 10px; animation-delay: 1.4s; }
+
+@keyframes cardBubbleDrift {
+    0%, 100% { transform: translateY(0); opacity: 0.5; }
+    50% { transform: translateY(-8px); opacity: 1; }
+}
+
+.edu-year-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, rgba(0,247,255,0.15), rgba(0,119,255,0.15));
+    border: 1px solid rgba(0,247,255,0.3);
+    color: #00f7ff;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+}
+
+.edu-institution {
+    font-size: 17px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.edu-degree {
+    font-size: 14px;
+    color: rgba(255,255,255,0.65);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.edu-degree i { color: #00f7ff; font-size: 12px; }
+
+.edu-wave-bar {
+    height: 3px;
+    background: linear-gradient(90deg, #00f7ff, rgba(0,119,255,0.4), transparent);
+    border-radius: 4px;
+    margin-top: 6px;
+}
+
+.edu-score-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 6px;
+}
+
+.edu-score-label {
+    font-size: 11px;
+    color: rgba(255,255,255,0.45);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.edu-score-track {
+    flex: 1;
+    height: 6px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.edu-score-fill {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, #00f7ff, #0077ff);
+    border-radius: 4px;
+    transition: width 1.5s cubic-bezier(0.25, 1, 0.5, 1) 0.5s;
+    box-shadow: 0 0 10px rgba(0,247,255,0.4);
+}
+
+.edu-item.active .edu-score-fill {
+    width: var(--score);
+}
+
+.edu-score-value {
+    font-size: 13px;
+    font-weight: 700;
+    color: #00f7ff;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* ==================== FABLAB SECTION ==================== */
+.fablab-section {
+    position: relative;
+    padding: 100px 0 120px;
+    background: linear-gradient(180deg, #0a1628 0%, #071220 60%, #0a1628 100%);
+    overflow: hidden;
+}
+
+.fablab-light-rays {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.fab-ray {
+    position: absolute;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0,247,255,0.04) 0%, transparent 70%);
+    transform-origin: top center;
+    animation: fabRaySway 8s ease-in-out infinite;
+}
+
+.fab-ray:nth-child(1) { left: 15%; animation-delay: 0s; }
+.fab-ray:nth-child(2) { left: 50%; animation-delay: 3s; width: 200px; }
+.fab-ray:nth-child(3) { left: 75%; animation-delay: 6s; width: 250px; }
+
+@keyframes fabRaySway {
+    0%, 100% { transform: skewX(-3deg) scaleX(1); opacity: 0.6; }
+    50% { transform: skewX(3deg) scaleX(1.1); opacity: 1; }
+}
+
+.fablab-logo-wrap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 40px 0 60px;
+}
+
+.fablab-logo {
+    width: min(340px, 85%);
+    filter: drop-shadow(0 0 24px rgba(0,247,255,0.35));
+    position: relative;
+    z-index: 1;
+    transition: filter 0.4s ease;
+}
+
+.fablab-logo:hover {
+    filter: drop-shadow(0 0 40px rgba(0,247,255,0.6));
+}
+
+.fablab-logo-glow {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px; height: 150px;
+    background: radial-gradient(ellipse, rgba(0,247,255,0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.fablab-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+    .fablab-grid { grid-template-columns: 1fr; }
+    .edu-item, .edu-item:nth-child(even) { flex-direction: column; }
+    .edu-connector { flex-direction: row; padding-top: 0; }
+    .edu-line { width: 40px; height: 2px; min-height: auto; margin-top: 0; margin-left: 6px; }
+}
+
+.fablab-card {
+    position: relative;
+}
+
+.fablab-card-inner {
+    position: relative;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(10,22,40,0.97) 0%, rgba(13,31,60,0.9) 100%);
+    border: 1px solid rgba(0,247,255,0.18);
+    border-radius: 22px;
+    padding: 32px 30px;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fablab-card-inner:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0,247,255,0.4);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.5), 0 0 35px rgba(0,247,255,0.1);
+}
+
+.fablab-card-glow {
+    position: absolute;
+    top: -30px; left: -30px;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(0,247,255,0.07) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.fablab-card-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 26px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid rgba(0,247,255,0.12);
+}
+
+.fablab-icon-ring {
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    border: 2px solid rgba(0,247,255,0.4);
+    background: linear-gradient(135deg, rgba(0,247,255,0.1), rgba(0,119,255,0.1));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00f7ff;
+    font-size: 18px;
+    flex-shrink: 0;
+    box-shadow: 0 0 16px rgba(0,247,255,0.15);
+}
+
+.fablab-card-header h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.4;
+}
+
+.fablab-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+.fablab-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13.5px;
+    color: rgba(255,255,255,0.72);
+    line-height: 1.5;
+    transition: color 0.2s;
+}
+
+.fablab-list li:hover { color: rgba(255,255,255,0.95); }
+
+.fablab-list li i {
+    color: #00f7ff;
+    font-size: 10px;
+    margin-top: 5px;
+    flex-shrink: 0;
+}
+
+.fablab-card-ripple {
+    position: absolute;
+    bottom: -30px; right: -30px;
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,247,255,0.08);
+    pointer-events: none;
+}
+
+.fablab-card-ripple::before {
+    content: '';
+    position: absolute;
+    inset: 16px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,247,255,0.05);
+}
+
+/* Declaration */
+.fablab-declaration {
+    position: relative;
+}
+
+.fablab-declaration-inner {
+    position: relative;
+    background: linear-gradient(135deg, rgba(0,247,255,0.05) 0%, rgba(0,119,255,0.05) 100%);
+    border: 1px solid rgba(0,247,255,0.25);
+    border-radius: 24px;
+    padding: 48px 40px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.fablab-decl-glow {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px; height: 200px;
+    background: radial-gradient(ellipse, rgba(0,247,255,0.06) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.fablab-decl-bubbles {
+    position: absolute;
+    width: 100%; height: 100%;
+    top: 0; left: 0;
+    pointer-events: none;
+}
+
+.fablab-decl-bubbles span {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(0,247,255,0.1);
+    border: 1px solid rgba(0,247,255,0.2);
+    animation: declBubble 5s ease-in-out infinite;
+}
+
+.fablab-decl-bubbles span:nth-child(1) { width: 14px; height: 14px; bottom: 20px; left: 10%; animation-delay: 0s; }
+.fablab-decl-bubbles span:nth-child(2) { width: 8px;  height: 8px;  bottom: 30px; left: 25%; animation-delay: 1s; }
+.fablab-decl-bubbles span:nth-child(3) { width: 11px; height: 11px; bottom: 15px; right: 20%; animation-delay: 2s; }
+.fablab-decl-bubbles span:nth-child(4) { width: 6px;  height: 6px;  bottom: 40px; right: 10%; animation-delay: 0.5s; }
+
+@keyframes declBubble {
+    0%, 100% { transform: translateY(0); opacity: 0.5; }
+    50% { transform: translateY(-15px); opacity: 1; }
+}
+
+.fablab-decl-icon {
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(0,247,255,0.15), rgba(0,119,255,0.15));
+    border: 2px solid rgba(0,247,255,0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00f7ff;
+    font-size: 24px;
+    margin: 0 auto 20px;
+    box-shadow: 0 0 24px rgba(0,247,255,0.2);
+}
+
+.fablab-declaration-inner h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.fablab-declaration-inner > p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 30px;
+}
+
+.fablab-signature {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.sig-line {
+    flex: 1;
+    max-width: 100px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0,247,255,0.4));
+}
+
+.sig-line:last-child {
+    background: linear-gradient(90deg, rgba(0,247,255,0.4), transparent);
+}
+
+.sig-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: #00f7ff;
+    letter-spacing: 2px;
+    text-shadow: 0 0 16px rgba(0,247,255,0.4);
 }
 
 
@@ -1441,6 +1838,7 @@ body {
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    place-items: center;
     gap: 25px;
 }
 
