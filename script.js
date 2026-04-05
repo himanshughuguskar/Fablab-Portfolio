@@ -281,6 +281,17 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 revealElements.forEach(el => revealObserver.observe(el));
 
+// ==================== EDU SCORE BAR ANIMATION ====================
+const eduItems = document.querySelectorAll('.edu-item');
+const eduObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+        }
+    });
+}, { threshold: 0.3 });
+eduItems.forEach(el => eduObserver.observe(el));
+
 // ==================== COUNTER ANIMATION ====================
 function animateCounter(stat) {
     const target = parseInt(stat.getAttribute('data-count'));
