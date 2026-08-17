@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fusion 360 Learning Journey | 7-Day Deep Dive</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="autocad.css">
+</head>
+<body>
+
+    <!-- Animated Blueprint Background -->
+    <canvas id="blueprint-bg" class="blueprint-bg"></canvas>
+
+    <!-- Floating Geometry Particles -->
+    <div id="particles-layer" class="particles-layer"></div>
+
+    <!-- Navigation -->
+    <nav class="f3d-nav" id="f3d-nav">
+        <a href="#" class="f3d-nav-back">
+            <i class="fas fa-arrow-left"></i>
+            <span>Back to Portfolio</span>
+        </a>
+        <div class="f3d-nav-brand">
+            <div class="f3d-nav-logo">
+                <i class="fas fa-cube"></i>
+            </div>
+            <span>Fusion 360 Journey</span>
+        </div>
+        <div class="f3d-nav-meter" id="f3d-nav-meter">
+            <i class="fas fa-drafting-compass"></i>
+            <span id="progress-value">0%</span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="f3d-hero">
+        <div class="f3d-hero-content">
+            <div class="f3d-hero-badge">
+                <i class="fas fa-rocket"></i>
+                <span>7-Day Learning Path</span>
+            </div>
+            <h1 class="f3d-hero-title">
+                <span class="f3d-title-line">Fusion 360</span>
+                <span class="f3d-title-line f3d-accent">Mastery Plan</span>
+            </h1>
+            <p class="f3d-hero-desc">Embark on a 7-day journey through the world of 3D CAD design. From basic sketches to complete assemblies — master Fusion 360 one day at a time.</p>
+            <div class="f3d-hero-stats">
+                <div class="f3d-stat">
+                    <span class="f3d-stat-num">7</span>
+                    <span class="f3d-stat-label">Days</span>
+                </div>
+                <div class="f3d-stat-divider"></div>
+                <div class="f3d-stat">
+                    <span class="f3d-stat-num">CAD</span>
+                    <span class="f3d-stat-label">CAM & CAE</span>
+                </div>
+                <div class="f3d-stat-divider"></div>
+                <div class="f3d-stat">
+                    <span class="f3d-stat-num">∞</span>
+                    <span class="f3d-stat-label">Creativity</span>
+                </div>
+            </div>
+        </div>
+        <div class="f3d-hero-visual">
+            <div class="f3d-cube-anim">
+                <div class="cube">
+                    <div class="cube-face cube-front"></div>
+                    <div class="cube-face cube-back"></div>
+                    <div class="cube-face cube-right"></div>
+                    <div class="cube-face cube-left"></div>
+                    <div class="cube-face cube-top"></div>
+                    <div class="cube-face cube-bottom"></div>
+                </div>
+                <div class="cube-glow"></div>
+                <div class="cube-orbit">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+        <div class="f3d-scroll-hint">
+            <div class="f3d-scroll-line"></div>
+            <span>Scroll to explore</span>
+        </div>
+    </header>
+
+    <!-- Timeline Section -->
+    <main class="f3d-timeline-section">
+        <div class="f3d-timeline-line" id="timeline-line">
+            <div class="f3d-timeline-progress" id="timeline-progress"></div>
+        </div>
+
+        <!-- Day 1 -->
+        <div class="f3d-day-card f3d-card-left" data-day="1">
+            <div class="f3d-card-connector">
+                <div class="f3d-connector-line"></div>
+                <div class="f3d-connector-dot">
+                    <span>1</span>
+                </div>
+            </div>
+            <div class="f3d-card">
+                <div class="f3d-card-glow"></div>
+                <div class="f3d-card-header">
+                    <div class="f3d-card-day-badge">
+                        <i class="fas fa-play-circle"></i>
+                        <span>Day 01</span>
+                    </div>
+                    <div class="f3d-card-level">
+                        <i class="fas fa-signal"></i>
+                        <span>Beginner</span>
+                    </div>
+                </div>
+                <div class="f3d-card-icon-wrap">
+                    <div class="f3d-card-icon">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <div class="f3d-card-icon-ring"></div>
+                </div>
+                <h3 class="f3d-card-title">Introduction & Interface</h3>
+                <p class="f3d-card-desc">What is Fusion 360 — understanding CAD, CAM, CAE basics. Workspace overview covering Design, Solid, and Surface modes. Learn navigation: zoom, pan, orbit. Create your first sketch.</p>
+                <div class="f3d-card-topics">
+                    <span><i class="fas fa-check-circle"></i> What is Fusion 360</span>
+                    <span><i class="fas fa-check-circle"></i> Workspace Overview</span>
+                    <span><i class="fas fa-check-circle"></i> Navigation (Zoom, Pan, Orbit)</span>
+                    <span><i class="fas fa-check-circle"></i> First Sketch</span>
+                </div>
+                <div class="f3d-card-practice">
+                    <div class="practice-header">
+                        <i class="fas fa-hammer"></i>
+                        <span>Practice:</span>
+                    </div>
+                    <p>Draw basic shapes (rectangle, circle, line)</p>
+                </div>
+                <div class="f3d-card-image">
+                    <img src="Fusion Day 1.png" alt="Day 1 - Fusion 360 Interface" id="img-day1" loading="lazy">
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 2 -->
+        <div class="f3d-day-card f3d-card-right" data-day="2">
+            <div class="f3d-card-connector">
+                <div class="f3d-connector-line"></div>
+                <div class="f3d-connector-dot">
+                    <span>2</span>
+                </div>
+            </div>
+            <div class="f3d-card">
+                <div class="f3d-card-glow"></div>
+                <div class="f3d-card-header">
+                    <div class="f3d-card-day-badge">
+                        <i class="fas fa-pencil-ruler"></i>
+                        <span>Day 02</span>
+                    </div>
+                    <div class="f3d-card-level">
+                        <i class="fas fa-signal"></i>
+                        <span>Beginner</span>
+                    </div>
+                </div>
+                <div class="f3d-card-icon-wrap">
+                    <div class="f3d-card-icon">
+                        <i class="fas fa-draw-polygon"></i>
+                    </div>
+                    <div class="f3d-card-icon-ring"></div>
+                </div>
+                <h3 class="f3d-card-title">Sketching — 2D Basics</h3>
+                <p class="f3d-card-desc">Master sketch tools: Line, Circle, Arc, Rectangle. Learn constraints — the backbone of parametric design: Coincident, Parallel, Perpendicular, and Dimensions.</p>
+                <div class="f3d-card-topics">
+                    <span><i class="fas fa-check-circle"></i> Line, Circle, Arc</span>
+                    <span><i class="fas fa-check-circle"></i> Rectangle Tool</span>
+                    <span><i class="fas fa-check-circle"></i> Constraints (Coincident, Parallel)</span>
+                    <span><i class="fas fa-check-circle"></i> Dimensions</span>
+                </div>
+                <div class="f3d-card-practice">
+                    <div class="practice-header">
+                        <i class="fas fa-hammer"></i>
+                        <span>Practice:</span>
+                    </div>
+                    <p>Draw a fully constrained sketch (no blue lines)</p>
+                </div>
+                <div class="f3d-card-image">
+                    <img src="Fusion Day 2.png" alt="Day 2 - 2D Sketching" id="img-day2" loading="lazy">
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 3 -->
+        <div class="f3d-day-card f3d-card-left" data-day="3">
+            <div class="f3d-card-connector">
+                <div class="f3d-connector-line"></div>
+                <div class="f3d-connector-dot">
+                    <span>3</span>
+                </div>
+            </div>
+            <div class="f3d-card">
+                <div class="f3d-card-glow"></div>
+                <div class="f3d-card-header">
+                    <div class="f3d-card-day-badge">
+                        <i class="fas fa-bezier-curve"></i>
+                        <span>Day 03</span>
+                    </div>
+                    <div class="f3d-card-level">
+                        <i class="fas fa-signal"></i>
+                        <span>Intermediate</span>
+                    </div>
+                </div>
+                <div class="f3d-card-icon-wrap">
+                    <div class="f3d-card-icon">
+                        <i class="fas fa-vector-square"></i>
+                    </div>
+                    <div class="f3d-card-icon-ring"></div>
+                </div>
+                <h3 class="f3d-card-title">Advanced Sketch Practice</h3>
+                <p class="f3d-card-desc">Level up with Offset, Trim, Extend tools. Master Mirror & Pattern for symmetrical designs. Tackle complex sketches that push your skills.</p>
+                <div class="f3d-card-topics">
+                    <span><i class="fas fa-check-circle"></i> Offset & Trim</span>
+                    <span><i class="fas fa-check-circle"></i> Extend Tool</span>
+                    <span><i class="fas fa-check-circle"></i> Mirror & Pattern</span>
+                    <span><i class="fas fa-check-circle"></i> Complex Sketches</span>
+                </div>
+                <div class="f3d-card-practice">
+                    <div class="practice-header">
+                        <i class="fas fa-hammer"></i>
+                        <span>Practice:</span>
+                    </div>
+                    <p>Draw a gear outline (simple) and a bracket shape</p>
+                </div>
+                <div class="f3d-card-image">
+                    <img src="Fusion Day 3.png" alt="Day 3 - Advanced Sketching" id="img-day3" loading="lazy">
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 4 -->
+        <div class="f3d-day-card f3d-card-right" data-day="4">
+            <div class="f3d-card-connector">
+                <div class="f3d-connector-line"></div>
+                <div class="f3d-connector-dot">
+                    <span>4</span>
+                </div>
+            </div>
+            <div class="f3d-card">
+                <div class="f3d-card-glow"></div>
+                <div class="f3d-card-header">
+                    <div class="f3d-card-day-badge">
+                        <i class="fas fa-cube"></i>
+                        <span>Day 04</span>
+                    </div>
+                    <div class="f3d-card-level">
+                        <i class="fas fa-signal"></i>
+                        <span>Core 🚀</span>
+                    </div>
+                </div>
+                <div class="f3d-card-icon-wrap">
+                    <div class="f3d-card-icon">
+                        <i class="fas fa-cubes"></i>
+                    </div>
+                    <div class="f3d-card-icon-ring"></div>
+                </div>
+                <h3 class="f3d-card-title">3D Modeling — Core Day 🚀</h3>
+                <p class="f3d-card-desc">Convert sketches to 3D! Master Extrude and Revolve operations. Apply Fillet and Chamfer modifications to create professional-looking parts.</p>
+                <div class="f3d-card-topics">
+                    <span><i class="fas fa-check-circle"></i> Extrude</span>
+                    <span><i class="fas fa-check-circle"></i> Revolve</span>
+                    <span><i class="fas fa-check-circle"></i> Fillet</span>
+                    <span><i class="fas fa-check-circle"></i> Chamfer</span>
+                </div>
+                <div class="f3d-card-practice">
+                    <div class="practice-header">
+                        <i class="fas fa-hammer"></i>
+                        <span>Practice:</span>
+                    </div>
+                    <p>Make a Cylinder and a Bolt-like shape</p>
+                </div>
+                <div class="f3d-card-image">
+                    <img src="Fusion Day 4.png" alt="Day 4 - 3D Modeling" id="img-day4" loading="lazy">
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 5 -->
+        <div class="f3d-day-card f3d-card-left" data-day="5">
+            <div class="f3d-card-connector">
+                <div class="f3d-connector-line"></div>
+                <div class="f3d-connector-dot">
+                    <span>5</span>
+                </div>
+            </div>
+            <div class="f3d-card">
+                <div class="f3d-card-glow"></div>
+                <div class="f3d-card-header">
+                    <div class="f3d-card-day-badge">
+                        <i class="fas fa-cogs"></i>
+                        <span>Day 05</span>
+                    </div>
+                    <div class="f3d-card-level">
+                        <i class="fas fa-signal"></i>
+                        <span>Intermediate</span>
+                    </div>
+                </div>
+                <div class="f3d-card-icon-wrap">
+                    <div class="f3d-card-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <div class="f3d-card-icon-ring"></div>
+                </div>
+                <h3 class="f3d-card-title">Assembly & Motion</h3>
+                <p class="f3d-card-desc">Understand Components vs Bodies. Use the Joint tool to connect parts. Run Motion Studies to simulate real-world movement.</p>
+                <div class="f3d-card-topics">
+                    <span><i class="fas fa-check-circle"></i> Components vs Bodies</span>
+                    <span><i class="fas fa-check-circle"></i> Joint Tool</span>
+                    <span><i class="fas fa-check-circle"></i> Motion Study</span>
+                    <span><i class="fas fa-check-circle"></i> Assembly Workflow</span>
+                </div>
+                <div class="f3d-card-practice">
+                    <div class="practice-header">
+                        <i class="fas fa-hammer"></i>
+                        <span>Practice:</span>
+                    </div>
+                    <p>Create a simple hinge mechanism</p>
+                </div>
+                <div class="f3d-card-image">
+                    <img src="Fusion Day 5.png" alt="Day 5 - Assembly & Motion" id="img-day5" loading="lazy">
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 6 -->
+        <div class="f3d-day-card f3d-card-right" data-day="6">
+            <div class="f3d-card-connector">
+                <div class="f3d-connector-line"></div>
+                <div class="f3d-connector-dot">
+                    <span>6</span>
+                </div>
+            </div>
+            <div class="f3d-card">
+                <div class="f3d-card-glow"></div>
+                <div class="f3d-card-header">
+                    <div class="f3d-card-day-badge">
+                        <i class="fas fa-ruler-combined"></i>
+                        <span>Day 06</span>
+                    </div>
+                    <div class="f3d-card-level">
+                        <i class="fas fa-signal"></i>
+                        <span>Advanced</span>
+                    </div>
+                </div>
+                <div class="f3d-card-icon-wrap">
+                    <div class="f3d-card-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <div class="f3d-card-icon-ring"></div>
+                </div>
+                <h3 class="f3d-card-title">Engineering Practice</h3>
+                <p class="f3d-card-desc">Create real engineering design: Switch. Learn the Measure tool and Inspect features for precision work.</p>
+                <div class="f3d-card-topics">
+                    <span><i class="fas fa-check-circle"></i> Switch Design</span>
+                    <span><i class="fas fa-check-circle"></i> Plate with Holes</span>
+                    <span><i class="fas fa-check-circle"></i> Measure Tool</span>
+                    <span><i class="fas fa-check-circle"></i> Inspect Features</span>
+                </div>
+                <div class="f3d-card-practice">
+                    <div class="practice-header">
+                        <i class="fas fa-hammer"></i>
+                        <span>Practice:</span>
+                    </div>
+                    <p>Design a laser-cut plate</p>
+                </div>
+                <div class="f3d-card-image">
+                    <img src="Fusion Switch.png" alt="Day 6 - Engineering Practice" id="img-day6" loading="lazy">
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 7 -->
+        <div class="f3d-day-card f3d-card-left" data-day="7">
+            <div class="f3d-card-connector">
+                <div class="f3d-connector-line"></div>
+                <div class="f3d-connector-dot">
+                    <span>7</span>
+                </div>
+            </div>
+            <div class="f3d-card">
+                <div class="f3d-card-glow"></div>
+                <div class="f3d-card-header">
+                    <div class="f3d-card-day-badge">
+                        <i class="fas fa-trophy"></i>
+                        <span>Day 07</span>
+                    </div>
+                    <div class="f3d-card-level">
+                        <i class="fas fa-signal"></i>
+                        <span>Final 🎯</span>
+                    </div>
+                </div>
+                <div class="f3d-card-icon-wrap">
+                    <div class="f3d-card-icon">
+                        <i class="fas fa-fan"></i>
+                    </div>
+                    <div class="f3d-card-icon-ring"></div>
+                </div>
+                <h3 class="f3d-card-title">Final Project — Table Fan 🎯</h3>
+                <p class="f3d-card-desc">Combine everything you've learned! Design a complete Table Fan from scratch — blades, motor housing, stand, and oscillation mechanism. Your masterpiece awaits.</p>
+                <div class="f3d-card-topics">
+                    <span><i class="fas fa-check-circle"></i> Combine All Skills</span>
+                    <span><i class="fas fa-check-circle"></i> Full Assembly</span>
+                    <span><i class="fas fa-check-circle"></i> Render & Present</span>
+                    <span><i class="fas fa-check-circle"></i> Table Fan Design</span>
+                </div>
+                <div class="f3d-card-practice">
+                    <div class="practice-header">
+                        <i class="fas fa-star"></i>
+                        <span>Project:</span>
+                    </div>
+                    <p>Design a complete Table Fan with all components assembled</p>
+                </div>
+                <div class="f3d-card-image">
+                    <img src="Table Fan.png" alt="Day 7 - Final Project Table Fan" id="img-day7" loading="lazy">
+                </div>
+            </div>
+        </div>
+
+        <!-- End marker -->
+        <div class="f3d-timeline-end">
+            <div class="f3d-trophy">
+                <i class="fas fa-award"></i>
+            </div>
+            <p>You've completed the 7-Day Fusion 360 Journey!</p>
+        </div>
+    </main>
+
+    <!-- Tools Section -->
+    <div class="f3d-tools-section">
+        <h3>Tools & Concepts Mastered</h3>
+        <div class="f3d-tools-grid">
+            <div class="f3d-tool-chip"><i class="fas fa-cube"></i> Fusion 360</div>
+            <div class="f3d-tool-chip"><i class="fas fa-pencil-ruler"></i> Sketching</div>
+            <div class="f3d-tool-chip"><i class="fas fa-cubes"></i> 3D Modeling</div>
+            <div class="f3d-tool-chip"><i class="fas fa-cogs"></i> Assembly</div>
+            <div class="f3d-tool-chip"><i class="fas fa-drafting-compass"></i> Constraints</div>
+            <div class="f3d-tool-chip"><i class="fas fa-ruler-combined"></i> Measure & Inspect</div>
+            <div class="f3d-tool-chip"><i class="fas fa-industry"></i> CAM Basics</div>
+            <div class="f3d-tool-chip"><i class="fas fa-fan"></i> Motion Study</div>
+        </div>
+    </div>
+
+    <!-- End Section -->
+    <div class="f3d-section-end">
+        <div class="f3d-end-trophy">
+            <i class="fas fa-gem"></i>
+        </div>
+        <p>7-Day Plan Complete — You're now a Fusion 360 Designer!</p>
+        <a href="#" class="btn-end" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
+            <span>Back to Top</span>
+            <i class="fas fa-arrow-up"></i>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="f3d-footer">
+        <p>&copy; 2026 Fusion 360 Learning Journey — 7-Day Mastery Plan</p>
+    </footer>
+
+    <script type="module" src="autocad.js"></script>
+</body>
+</html>
