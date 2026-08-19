@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-mgx-overview="title">Java Deep Dive | 8 Days Journey</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="./java.css">
+    <link data-mgx-overview="icon" rel="icon" href="https://public-frontend-1300249583.cos.ap-nanjing.myqcloud.com/commonfile/DefaultAppLogo.png" />
+    <meta data-mgx-overview="description" name="description" content="An 8-day underwater journey through Java programming - from basics to OOP mastery and a final project." />
+    <meta data-mgx-overview="og:title" property="og:title" content="Java Deep Dive | 8 Days Journey" />
+    <meta data-mgx-overview="og:description" property="og:description" content="An 8-day underwater journey through Java programming - from basics to OOP mastery and a final project." />
+    <meta data-mgx-overview="og:image" property="og:image" content="https://public-frontend-1300249583.cos.ap-nanjing.myqcloud.com/commonfile/DefaultAppLogo.png" />
+    <meta data-mgx-overview="twitter:title" name="twitter:title" content="Java Deep Dive | 8 Days Journey" />
+    <meta data-mgx-overview="twitter:description" name="twitter:description" content="An 8-day underwater journey through Java programming - from basics to OOP mastery and a final project." />
+    <meta data-mgx-overview="twitter:image" name="twitter:image" content="https://public-frontend-1300249583.cos.ap-nanjing.myqcloud.com/commonfile/DefaultAppLogo.png" />
+</head>
+<body>
+
+    <!-- Ambient underwater background -->
+    <canvas id="underwater-bg" class="underwater-bg"></canvas>
+
+    <!-- Floating bubbles layer -->
+    <div id="bubbles-layer" class="bubbles-layer"></div>
+
+    <!-- Navigation -->
+    <nav class="wd-nav">
+        <div class="wd-nav-brand">
+            <div class="wd-nav-logo">
+                <i class="fab fa-java"></i>
+            </div>
+            <span>Java Deep Dive</span>
+        </div>
+        <div class="wd-nav-depth" id="depth-meter">
+            <i class="fas fa-water"></i>
+            <span id="depth-value">0m</span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="wd-hero">
+        <div class="wd-hero-content">
+            <div class="wd-hero-badge">
+                <i class="fas fa-anchor"></i>
+                <span>8 Days Learning Path</span>
+            </div>
+            <h1 class="wd-hero-title">
+                <span class="wd-title-line">Java Programming</span>
+                <span class="wd-title-line wd-accent">Deep Dive</span>
+            </h1>
+            <p class="wd-hero-desc">Embark on an 8-day underwater journey through the ocean of Java programming. Each day takes you deeper into the abyss of Object-Oriented mastery.</p>
+            <div class="wd-hero-stats">
+                <div class="wd-stat">
+                    <span class="wd-stat-num">8</span>
+                    <span class="wd-stat-label">Days</span>
+                </div>
+                <div class="wd-stat-divider"></div>
+                <div class="wd-stat">
+                    <span class="wd-stat-num">20+</span>
+                    <span class="wd-stat-label">Programs</span>
+                </div>
+                <div class="wd-stat-divider"></div>
+                <div class="wd-stat">
+                    <span class="wd-stat-num">∞</span>
+                    <span class="wd-stat-label">Depth</span>
+                </div>
+            </div>
+        </div>
+        <div class="wd-hero-visual">
+            <div class="wd-submarine">
+                <div class="sub-body">
+                    <div class="sub-window"></div>
+                    <div class="sub-window sub-window-2"></div>
+                </div>
+                <div class="sub-propeller">
+                    <div class="prop-blade"></div>
+                    <div class="prop-blade prop-blade-2"></div>
+                </div>
+                <div class="sub-light"></div>
+                <div class="sub-bubbles">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+        <div class="wd-scroll-hint">
+            <div class="wd-scroll-line"></div>
+            <span>Scroll to dive</span>
+        </div>
+    </header>
+
+    <!-- Timeline Section -->
+    <main class="wd-timeline-section">
+        <div class="wd-timeline-line" id="timeline-line">
+            <div class="wd-timeline-progress" id="timeline-progress"></div>
+        </div>
+
+        <!-- Day 1 -->
+        <div class="wd-day-card wd-card-left" data-day="1" data-depth="12m">
+            <div class="wd-card-connector">
+                <div class="wd-connector-line"></div>
+                <div class="wd-connector-dot">
+                    <span>1</span>
+                </div>
+            </div>
+            <div class="wd-card">
+                <div class="wd-card-glow"></div>
+                <div class="wd-card-header">
+                    <div class="wd-card-day-badge">
+                        <i class="fas fa-sun"></i>
+                        <span>Day 01</span>
+                    </div>
+                    <div class="wd-card-depth">
+                        <i class="fas fa-arrow-down"></i>
+                        <span>12m Deep</span>
+                    </div>
+                </div>
+                <div class="wd-card-icon-wrap">
+                    <div class="wd-card-icon">
+                        <i class="fab fa-java"></i>
+                    </div>
+                    <div class="wd-card-icon-ring"></div>
+                </div>
+                <h3 class="wd-card-title">The Surface — Hello Java!</h3>
+                <p class="wd-card-desc">Your first breath in Java. Understanding the basic syntax, main method, System.out.println, and escape sequences. Writing your very first Java program.</p>
+                <div class="wd-card-topics">
+                    <span><i class="fas fa-check-circle"></i> public static void main</span>
+                    <span><i class="fas fa-check-circle"></i> System.out.println</span>
+                    <span><i class="fas fa-check-circle"></i> Escape Sequences (\n)</span>
+                    <span><i class="fas fa-check-circle"></i> String Output & Patterns</span>
+                </div>
+                <div class="wd-card-footer">
+                    <div>
+                        <a href="java-files/javad1.java" class="whati" target="_blank">What I Learned...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 2 -->
+        <div class="wd-day-card wd-card-right" data-day="2" data-depth="25m">
+            <div class="wd-card-connector">
+                <div class="wd-connector-line"></div>
+                <div class="wd-connector-dot">
+                    <span>2</span>
+                </div>
+            </div>
+            <div class="wd-card">
+                <div class="wd-card-glow"></div>
+                <div class="wd-card-header">
+                    <div class="wd-card-day-badge">
+                        <i class="fas fa-water"></i>
+                        <span>Day 02</span>
+                    </div>
+                    <div class="wd-card-depth">
+                        <i class="fas fa-arrow-down"></i>
+                        <span>25m Deep</span>
+                    </div>
+                </div>
+                <div class="wd-card-icon-wrap">
+                    <div class="wd-card-icon">
+                        <i class="fas fa-keyboard"></i>
+                    </div>
+                    <div class="wd-card-icon-ring"></div>
+                </div>
+                <h3 class="wd-card-title">Shallow Waters — Input & Data Types</h3>
+                <p class="wd-card-desc">Learning to take user input with Scanner class. Understanding data types — int, float, double, String. Performing calculations like temperature conversion, squares, and cubes.</p>
+                <div class="wd-card-topics">
+                    <span><i class="fas fa-check-circle"></i> Scanner Class (Input)</span>
+                    <span><i class="fas fa-check-circle"></i> Data Types (int, float, double)</span>
+                    <span><i class="fas fa-check-circle"></i> String Input (nextLine)</span>
+                    <span><i class="fas fa-check-circle"></i> Math Operations</span>
+                </div>
+                <div class="wd-card-footer">
+                    <div>
+                        <a href="java-files/javad2.java" class="whati" target="_blank">What I Learned...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 3 -->
+        <div class="wd-day-card wd-card-left" data-day="3" data-depth="38m">
+            <div class="wd-card-connector">
+                <div class="wd-connector-line"></div>
+                <div class="wd-connector-dot">
+                    <span>3</span>
+                </div>
+            </div>
+            <div class="wd-card">
+                <div class="wd-card-glow"></div>
+                <div class="wd-card-header">
+                    <div class="wd-card-day-badge">
+                        <i class="fas fa-calculator"></i>
+                        <span>Day 03</span>
+                    </div>
+                    <div class="wd-card-depth">
+                        <i class="fas fa-arrow-down"></i>
+                        <span>38m Deep</span>
+                    </div>
+                </div>
+                <div class="wd-card-icon-wrap">
+                    <div class="wd-card-icon">
+                        <i class="fas fa-plus-minus"></i>
+                    </div>
+                    <div class="wd-card-icon-ring"></div>
+                </div>
+                <h3 class="wd-card-title">Coral Reef — Operators</h3>
+                <p class="wd-card-desc">Exploring all Java operators — arithmetic, relational, assignment, increment/decrement, and bitwise. The building blocks of logic like colorful coral formations.</p>
+                <div class="wd-card-topics">
+                    <span><i class="fas fa-check-circle"></i> Arithmetic Operators (+, -, *, /, %)</span>
+                    <span><i class="fas fa-check-circle"></i> Relational Operators (==, !=, &gt;, &lt;)</span>
+                    <span><i class="fas fa-check-circle"></i> Assignment (+=, -=, *=, /=)</span>
+                    <span><i class="fas fa-check-circle"></i> Increment/Decrement & Bitwise</span>
+                </div>
+                <div class="wd-card-footer">
+                    <div>
+                        <a href="java-files/javad3.java" class="whati" target="_blank">What I Learned...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 4 -->
+        <div class="wd-day-card wd-card-right" data-day="4" data-depth="50m">
+            <div class="wd-card-connector">
+                <div class="wd-connector-line"></div>
+                <div class="wd-connector-dot">
+                    <span>4</span>
+                </div>
+            </div>
+            <div class="wd-card">
+                <div class="wd-card-glow"></div>
+                <div class="wd-card-header">
+                    <div class="wd-card-day-badge">
+                        <i class="fas fa-code-branch"></i>
+                        <span>Day 04</span>
+                    </div>
+                    <div class="wd-card-depth">
+                        <i class="fas fa-arrow-down"></i>
+                        <span>50m Deep</span>
+                    </div>
+                </div>
+                <div class="wd-card-icon-wrap">
+                    <div class="wd-card-icon">
+                        <i class="fas fa-route"></i>
+                    </div>
+                    <div class="wd-card-icon-ring"></div>
+                </div>
+                <h3 class="wd-card-title">Ocean Currents — Control Flow</h3>
+                <p class="wd-card-desc">Navigating the currents of decision-making and repetition. If-else, switch, for loops, while loops, nested loops, break and continue — like navigating ocean currents.</p>
+                <div class="wd-card-topics">
+                    <span><i class="fas fa-check-circle"></i> If-Else & Nested If</span>
+                    <span><i class="fas fa-check-circle"></i> Switch Statement</span>
+                    <span><i class="fas fa-check-circle"></i> For & While Loops</span>
+                    <span><i class="fas fa-check-circle"></i> Break, Continue & Nested Loops</span>
+                </div>
+                <div class="wd-card-footer">
+                    <div>
+                        <a href="java-files/javad4.java" class="whati" target="_blank">What I Learned...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 5 -->
+        <div class="wd-day-card wd-card-left" data-day="5" data-depth="62m">
+            <div class="wd-card-connector">
+                <div class="wd-connector-line"></div>
+                <div class="wd-connector-dot">
+                    <span>5</span>
+                </div>
+            </div>
+            <div class="wd-card">
+                <div class="wd-card-glow"></div>
+                <div class="wd-card-header">
+                    <div class="wd-card-day-badge">
+                        <i class="fas fa-bolt"></i>
+                        <span>Day 05</span>
+                    </div>
+                    <div class="wd-card-depth">
+                        <i class="fas fa-arrow-down"></i>
+                        <span>62m Deep</span>
+                    </div>
+                </div>
+                <div class="wd-card-icon-wrap">
+                    <div class="wd-card-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <div class="wd-card-icon-ring"></div>
+                </div>
+                <h3 class="wd-card-title">Deep Currents — Methods & Arrays</h3>
+                <p class="wd-card-desc">Diving into reusable code with methods (static & non-static) and organizing data with arrays — 1D and 2D. Like schools of fish swimming in formation.</p>
+                <div class="wd-card-topics">
+                    <span><i class="fas fa-check-circle"></i> Static & Non-static Methods</span>
+                    <span><i class="fas fa-check-circle"></i> Parameters & Return Types</span>
+                    <span><i class="fas fa-check-circle"></i> 1D Arrays (Input/Output)</span>
+                    <span><i class="fas fa-check-circle"></i> 2D Arrays (Matrix)</span>
+                </div>
+                <div class="wd-card-footer">
+                    <div>
+                        <a href="java-files/javad5.java" class="whati" target="_blank">Methods</a>
+                        &nbsp;&nbsp;|&nbsp;&nbsp;
+                        <a href="java-files/javad5arrays.java" class="whati" target="_blank">Arrays</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 6 -->
+        <div class="wd-day-card wd-card-right" data-day="6" data-depth="75m">
+            <div class="wd-card-connector">
+                <div class="wd-connector-line"></div>
+                <div class="wd-connector-dot">
+                    <span>6</span>
+                </div>
+            </div>
+            <div class="wd-card">
+                <div class="wd-card-glow"></div>
+                <div class="wd-card-header">
+                    <div class="wd-card-day-badge">
+                        <i class="fas fa-cubes"></i>
+                        <span>Day 06</span>
+                    </div>
+                    <div class="wd-card-depth">
+                        <i class="fas fa-arrow-down"></i>
+                        <span>75m Deep</span>
+                    </div>
+                </div>
+                <div class="wd-card-icon-wrap">
+                    <div class="wd-card-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <div class="wd-card-icon-ring"></div>
+                </div>
+                <h3 class="wd-card-title">The Abyss — OOP: Classes & Constructors</h3>
+                <p class="wd-card-desc">Entering the deep world of Object-Oriented Programming. Classes, objects, constructors (default, parameterized, copy), this keyword — the architecture of the deep.</p>
+                <div class="wd-card-topics">
+                    <span><i class="fas fa-check-circle"></i> Classes & Objects</span>
+                    <span><i class="fas fa-check-circle"></i> Default Constructor</span>
+                    <span><i class="fas fa-check-circle"></i> Parameterized Constructor</span>
+                    <span><i class="fas fa-check-circle"></i> this Keyword & Constructor Chaining</span>
+                </div>
+                <div class="wd-card-footer">
+                    <div>
+                        <a href="java-files/javad6.java" class="whati" target="_blank">Basics</a>
+                        &nbsp;|&nbsp;
+                        <a href="java-files/javad62.java" class="whati" target="_blank">Parameterized</a>
+                        &nbsp;|&nbsp;
+                        <a href="java-files/javad63.java" class="whati" target="_blank">this</a>
+                        &nbsp;|&nbsp;
+                        <a href="java-files/javad65.java" class="whati" target="_blank">Objects</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 7 -->
+        <div class="wd-day-card wd-card-left" data-day="7" data-depth="90m">
+            <div class="wd-card-connector">
+                <div class="wd-connector-line"></div>
+                <div class="wd-connector-dot">
+                    <span>7</span>
+                </div>
+            </div>
+            <div class="wd-card">
+                <div class="wd-card-glow"></div>
+                <div class="wd-card-header">
+                    <div class="wd-card-day-badge">
+                        <i class="fas fa-sitemap"></i>
+                        <span>Day 07</span>
+                    </div>
+                    <div class="wd-card-depth">
+                        <i class="fas fa-arrow-down"></i>
+                        <span>90m Deep</span>
+                    </div>
+                </div>
+                <div class="wd-card-icon-wrap">
+                    <div class="wd-card-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <div class="wd-card-icon-ring"></div>
+                </div>
+                <h3 class="wd-card-title">Bioluminescence — OOP Pillars</h3>
+                <p class="wd-card-desc">The four pillars of OOP light up the darkness. Encapsulation, Inheritance, Polymorphism (overloading & overriding), Abstraction, and Interfaces — glowing like bioluminescent creatures.</p>
+                <div class="wd-card-topics">
+                    <span><i class="fas fa-check-circle"></i> Encapsulation (Getters/Setters)</span>
+                    <span><i class="fas fa-check-circle"></i> Inheritance (extends, super)</span>
+                    <span><i class="fas fa-check-circle"></i> Polymorphism (Overloading/Overriding)</span>
+                    <span><i class="fas fa-check-circle"></i> Abstraction & Interfaces</span>
+                </div>
+                <div class="wd-card-footer">
+                    <div>
+                        <a href="java-files/javad71.java" class="whati" target="_blank">Encapsulation</a>
+                        &nbsp;|&nbsp;
+                        <a href="java-files/javad74.java" class="whati" target="_blank">Overloading</a>
+                        &nbsp;|&nbsp;
+                        <a href="java-files/javad75.java" class="whati" target="_blank">Abstract</a>
+                        &nbsp;|&nbsp;
+                        <a href="java-files/javad76.java" class="whati" target="_blank">Interface</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 8 - Project -->
+        <div class="wd-day-card wd-card-right" data-day="8" data-depth="100m">
+            <div class="wd-card-connector">
+                <div class="wd-connector-line"></div>
+                <div class="wd-connector-dot wd-dot-final">
+                    <span>8</span>
+                </div>
+            </div>
+            <div class="wd-card wd-card-final">
+                <div class="wd-card-glow"></div>
+                <div class="wd-card-header">
+                    <div class="wd-card-day-badge wd-badge-final">
+                        <i class="fas fa-trophy"></i>
+                        <span>Day 08 — Project</span>
+                    </div>
+                    <div class="wd-card-depth">
+                        <i class="fas fa-arrow-down"></i>
+                        <span>100m Deep</span>
+                    </div>
+                </div>
+                <div class="wd-card-icon-wrap">
+                    <div class="wd-card-icon wd-icon-final">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="wd-card-icon-ring wd-ring-final"></div>
+                </div>
+                <h3 class="wd-card-title">Treasure Chest — Final OOP Project</h3>
+                <p class="wd-card-desc">Combining all 4 OOP pillars into one complete project. Abstraction, Encapsulation, Inheritance, and Polymorphism working together — the treasure at the deepest point of your journey.</p>
+                <div class="wd-card-topics">
+                    <span><i class="fas fa-check-circle"></i> Abstract Classes & Interfaces</span>
+                    <span><i class="fas fa-check-circle"></i> Encapsulation with Getters/Setters</span>
+                    <span><i class="fas fa-check-circle"></i> Inheritance with super()</span>
+                    <span><i class="fas fa-check-circle"></i> Method Overloading & Overriding</span>
+                </div>
+                <div class="wd-card-footer">
+                    <div>
+                        <a href="java-files/javad77.java" class="whati" target="_blank">View Final Project...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- End marker -->
+        <div class="wd-timeline-end">
+            <div class="wd-treasure-chest">
+                <i class="fas fa-gem"></i>
+            </div>
+            <p>You've reached the deepest point!</p>
+            <span class="wd-end-text">Java Mastery Achieved 🎉</span>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="wd-footer">
+        <p>&copy; 2026 Himanshu Ghuguskar — Java Programming Deep Dive</p>
+    </footer>
+
+    <script type="module" src="./java.js"></script>
+</body>
+</html>
