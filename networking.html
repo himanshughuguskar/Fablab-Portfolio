@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Networking Journey | 7 Days Deep</title>
+    <meta name="description" content="A 7-day deep dive into Networking — data communication, computer networks, topologies, OSI model, protocols, HTTP, IP, DHCP, DNS, ARP, ICMP, WebSocket and WebRTC.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="webdev.css">
+    <link rel="stylesheet" href="networking.css">
+</head>
+<body>
+
+    <!-- Ambient underwater background -->
+    <canvas id="underwater-bg" class="underwater-bg"></canvas>
+
+    <!-- Floating bubbles layer -->
+    <div id="bubbles-layer" class="bubbles-layer"></div>
+
+    <!-- Navigation -->
+    <nav class="wd-nav">
+        <a href="index.html" class="wd-nav-back">
+            <i class="fas fa-arrow-left"></i>
+            <span>Back to Portfolio</span>
+        </a>
+        <div class="wd-nav-brand">
+            <div class="wd-nav-logo">
+                <i class="fas fa-network-wired"></i>
+            </div>
+            <span>Networking Journey</span>
+        </div>
+        <div class="wd-nav-depth" id="depth-meter">
+            <i class="fas fa-water"></i>
+            <span id="depth-value">0m</span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="wd-hero">
+        <div class="wd-hero-content">
+            <div class="wd-hero-badge">
+                <i class="fas fa-satellite-dish"></i>
+                <span>7 Days Learning Path</span>
+            </div>
+            <h1 class="wd-hero-title">
+                <span class="wd-title-line">Networking</span>
+                <span class="wd-title-line wd-accent">Deep Dive</span>
+            </h1>
+            <p class="wd-hero-desc">Dive through the ocean of computer networks in 7 days — from the very meaning of data communication down to the deep currents of WebSocket and real-time communication.</p>
+            <div class="wd-hero-stats">
+                <div class="wd-stat">
+                    <span class="wd-stat-num">7</span>
+                    <span class="wd-stat-label">Days</span>
+                </div>
+                <div class="wd-stat-divider"></div>
+                <div class="wd-stat">
+                    <span class="wd-stat-num">24</span>
+                    <span class="wd-stat-label">Topics</span>
+                </div>
+                <div class="wd-stat-divider"></div>
+                <div class="wd-stat">
+                    <span class="wd-stat-num">7</span>
+                    <span class="wd-stat-label">OSI Layers</span>
+                </div>
+            </div>
+        </div>
+        <div class="wd-hero-visual">
+            <div class="net-graph" aria-hidden="true">
+                <div class="net-link net-link-tl"><span class="net-packet"></span></div>
+                <div class="net-link net-link-tr"><span class="net-packet net-packet-2"></span></div>
+                <div class="net-link net-link-bl"><span class="net-packet net-packet-3"></span></div>
+                <div class="net-link net-link-br"><span class="net-packet net-packet-4"></span></div>
+
+                <div class="net-node net-node-center">
+                    <i class="fas fa-network-wired"></i>
+                    <span class="net-node-ring"></span>
+                </div>
+                <div class="net-node net-node-tl"><i class="fas fa-laptop"></i></div>
+                <div class="net-node net-node-tr"><i class="fas fa-server"></i></div>
+                <div class="net-node net-node-bl"><i class="fas fa-mobile-screen"></i></div>
+                <div class="net-node net-node-br"><i class="fas fa-cloud"></i></div>
+            </div>
+        </div>
+        <div class="wd-scroll-hint">
+            <div class="wd-scroll-line"></div>
+            <span>Scroll to dive</span>
+        </div>
+    </header>
+
+    <!-- Timeline Section -->
+    <main class="wd-timeline-section">
+        <div class="wd-timeline-line" id="timeline-line">
+            <div class="wd-timeline-progress" id="timeline-progress"></div>
+        </div>
+
+        <!-- Day 1 -->
+        <div class="wd-day-card wd-card-left" data-day="1" data-depth="15m">
+            <div class="wd-card-connector">
+                <div class="wd-connector-line"></div>
+                <div class="wd-connector-dot">
+                    <span>1</span>
+                </div>
+            </div>
+            <div class="wd-card">
+                <div class="wd-card-glow"></div>
+                <div class="wd-card-header">
+                    <div class="wd-card-day-badge">
+                        <i class="fas fa-sun"></i>
+                        <span>Day 01</span>
+                    </div>
+                    <div class="wd-card-depth">
+                        <i class="fas fa-arrow-down"></i>
+                        <span>15m Deep</span>
+                    </div>
+                </div>
+                <div class="wd-card-icon-wrap">
+                    <div class="wd-card-icon">
+                        <i class="fas fa-satellite-dish"></i>
+                    </div>
+                    <div class="wd-card-icon-ring"></div>
+                </div>
+                <h3 class="wd-card-title">The Surface — Data Communication</h3>
+                <p class="wd-card-desc">The first breath before the dive. Understanding what data communication really means, the pieces that make it work, and how data actually travels from one device to another.</p>
+                <div class="wd-card-topics">
+                    <span><i class="fas fa-check-circle"></i> Meaning and basics of data communication</span>
+                    <span><i class="fas fa-check-circle"></i> Components of data communication</span>
+                    <span><i class="fas fa-check-circle"></i> Data transmission</span>
+                    <span><i class="fas fa-check-circle"></i> Characteristics of data communication</span>
+                </div>
+                <div class="wd-card-footer">
+                    <button class="net-notes-toggle whati" type="button" aria-expanded="false">
+                        <i class="fas fa-book-open"></i>
+                        <span>What I Learn...</span>
+                        <i class="fas fa-chevron-down net-notes-chevron"></i>
+                    </button>
+                    <span class="wd-card-status wd-completed"><i class="fas fa-circle-check"></i> Completed</span>
+                </div>
+                <div class="net-notes" hidden>
+                    <ul>
+                        <li><b>Data communication</b> is the exchange of data between two devices through some form of transmission medium.</li>
+                        <li><b>Five components:</b> message, sender, receiver, transmission medium and protocol.</li>
+                        <li><b>Data transmission modes:</b> simplex (one way), half duplex (one direction at a time) and full duplex (both ways together).</li>
+                        <li><b>Four characteristics:</b> delivery to the correct destination, accuracy, timeliness and low jitter.</li>
+                    </ul>
+                </div>
+                <div class="net-card-watermark"><i class="fas fa-satellite-dish"></i></div>
+            </div>
+        </div>
+
+        <!-- Day 2 -->
+        <div class="wd-day-card wd-card-right" data-day="2" data-depth="30m">
+            <div class="wd-card-connector">
+                <div class="wd-connector-line"></div>
+                <div class="wd-connector-dot">
+                    <span>2</span>
+                </div>
+            </div>
+            <div class="wd-card">
+                <div class="wd-card-glow"></div>
+                <div class="wd-card-header">
+                    <div class="wd-card-day-badge">
+                        <i class="fas fa-water"></i>
+                        <span>Day 02</span>
+                    </div>
+                    <div class="wd-card-depth">
+                        <i class="fas fa-arrow-down"></i>
+                        <span>30m Deep</span>
+                    </div>
+                </div>
+                <div class="wd-card-icon-wrap">
+                    <div class="wd-card-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div class="wd-card-icon-ring"></div>
+                </div>
+                <h3 class="wd-card-title">Shallow Waters — Computer Networks</h3>
+                <p class="wd-card-desc">Many devices, one shared ocean. Why we connect machines together at all, and how networks are classified by the area they cover.</p>
+                <div class="wd-card-topics">
+                    <span><i class="fas fa-check-circle"></i> What is a computer network?</span>
+                    <span><i class="fas fa-check-circle"></i> Need for networking</span>
+                    <span><i class="fas fa-check-circle"></i> Types of networks</span>
+                    <span><i class="fas fa-check-circle"></i> PAN, LAN, MAN, WAN</span>
+                </div>
+                <div class="wd-card-footer">
+                    <button class="net-notes-toggle whati" type="button" aria-expanded="false">
+                        <i class="fas fa-book-open"></i>
+                        <span>What I Learn...</span>
+                        <i class="fas fa-chevron-down net-notes-chevron"></i>
+                    </button>
+                    <span class="wd-card-status wd-completed"><i class="fas fa-circle-check"></i> Completed</span>
+                </div>
+                <div class="net-notes" hidden>
+                    <ul>
+                        <li>A <b>computer network</b> is a set of devices connected by links so they can share data and resources.</li>
+                        <li><b>Need for networking:</b> resource sharing, communication, centralised data, cost saving and reliability.</li>
+                        <li><b>PAN</b> — a few metres, around one person (Bluetooth, hotspot).</li>
+                        <li><b>LAN</b> — a room, lab or building. <b>MAN</b> — a city. <b>WAN</b> — countries and continents, like the Internet.</li>
+                    </ul>
+                    <div class="net-chips">
+                        <span class="net-chip">PAN</span>
+                        <span class="net-chip">LAN</span>
+                        <span class="net-chip">MAN</span>
+                        <span class="net-chip">WAN</span>
+                    </div>
+                </div>
+                <div class="net-card-watermark"><i class="fas fa-network-wired"></i></div>
+            </div>
+        </div>
+
+        <!-- Day 3 -->
+        <div class="wd-day-card wd-card-left" data-day="3" data-depth="45m">
+            <div class="wd-card-connector">
+                <div class="wd-connector-line"></div>
+                <div class="wd-connector-dot">
+                    <span>3</span>
+                </div>
+            </div>
+            <div class="wd-card">
+                <div class="wd-card-glow"></div>
+                <div class="wd-card-header">
+                    <div class="wd-card-day-badge">
+                        <i class="fas fa-diagram-project"></i>
+                        <span>Day 03</span>
+                    </div>
+                    <div class="wd-card-depth">
+                        <i class="fas fa-arrow-down"></i>
+                        <span>45m Deep</span>
+                    </div>
+                </div>
+                <div class="wd-card-icon-wrap">
+                    <div class="wd-card-icon">
+                        <i class="fas fa-share-nodes"></i>
+                    </div>
+                    <div class="wd-card-icon-ring"></div>
+                </div>
+                <h3 class="wd-card-title">Coral Reef — Topologies &amp; Networking Devices</h3>
+                <p class="wd-card-desc">The shape of the reef decides how life flows through it. Learning how devices are arranged physically and the hardware that keeps the traffic moving.</p>
+                <div class="wd-card-topics">
+                    <span><i class="fas fa-check-circle"></i> Network topologies</span>
+                    <span><i class="fas fa-check-circle"></i> Bus, Star, Ring, Mesh, Hybrid</span>
+                    <span><i class="fas fa-check-circle"></i> Hub and Switch</span>
+                    <span><i class="fas fa-check-circle"></i> Router</span>
+                </div>
+                <div class="wd-card-footer">
+                    <button class="net-notes-toggle whati" type="button" aria-expanded="false">
+                        <i class="fas fa-book-open"></i>
+                        <span>What I Learn...</span>
+                        <i class="fas fa-chevron-down net-notes-chevron"></i>
+                    </button>
+                    <span class="wd-card-status wd-completed"><i class="fas fa-circle-check"></i> Completed</span>
+                </div>
+                <div class="net-notes" hidden>
+                    <ul>
+                        <li><b>Bus</b> — one backbone cable, cheap but a single break affects everyone.</li>
+                        <li><b>Star</b> — every node joins a central hub/switch; easy to manage, central device is critical.</li>
+                        <li><b>Ring</b> — data travels in a loop, token passing style. <b>Mesh</b> — every node linked to every other, very reliable but costly.</li>
+                        <li><b>Hybrid</b> — a mix of two or more topologies, used in real campuses.</li>
+                        <li><b>Hub</b> broadcasts to all ports, <b>Switch</b> forwards by MAC address, <b>Router</b> connects different networks and forwards by IP address.</li>
+                    </ul>
+                    <div class="net-chips">
+                        <span class="net-chip">Bus</span>
+                        <span class="net-chip">Star</span>
+                        <span class="net-chip">Ring</span>
+                        <span class="net-chip">Mesh</span>
+                        <span class="net-chip">Hybrid</span>
+                    </div>
+                </div>
+                <div class="net-card-watermark"><i class="fas fa-share-nodes"></i></div>
+            </div>
+        </div>
+
+        <!-- Day 4 -->
+        <div class="wd-day-card wd-card-right" data-day="4" data-depth="60m">
+            <div class="wd-card-connector">
+                <div class="wd-connector-line"></div>
+                <div class="wd-connector-dot">
+                    <span>4</span>
+                </div>
+            </div>
+            <div class="wd-card">
+                <div class="wd-card-glow"></div>
+                <div class="wd-card-header">
+                    <div class="wd-card-day-badge">
+                        <i class="fas fa-layer-group"></i>
+                        <span>Day 04</span>
+                    </div>
+                    <div class="wd-card-depth">
+                        <i class="fas fa-arrow-down"></i>
+                        <span>60m Deep</span>
+                    </div>
+                </div>
+                <div class="wd-card-icon-wrap">
+                    <div class="wd-card-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <div class="wd-card-icon-ring"></div>
+                </div>
+                <h3 class="wd-card-title">Diving in Depth — OSI Model &amp; Protocols</h3>
+                <p class="wd-card-desc">Seven layers of water between you and the seabed. Understanding how the OSI model splits communication into layers, and why protocols are the rules of the ocean.</p>
+                <div class="wd-card-topics">
+                    <span><i class="fas fa-check-circle"></i> Introduction to OSI model</span>
+                    <span><i class="fas fa-check-circle"></i> Seven layers of OSI</span>
+                    <span><i class="fas fa-check-circle"></i> Functions of each layer</span>
+                    <span><i class="fas fa-check-circle"></i> Introduction to network protocols</span>
+                    <span><i class="fas fa-check-circle"></i> Importance of protocols</span>
+                </div>
+                <div class="wd-card-footer">
+                    <button class="net-notes-toggle whati" type="button" aria-expanded="false">
+                        <i class="fas fa-book-open"></i>
+                        <span>What I Learn...</span>
+                        <i class="fas fa-chevron-down net-notes-chevron"></i>
+                    </button>
+                    <span class="wd-card-status wd-completed"><i class="fas fa-circle-check"></i> Completed</span>
+                </div>
+                <div class="net-notes" hidden>
+                    <ol class="net-osi-list">
+                        <li><b>Physical</b> — bits, cables, signals, connectors.</li>
+                        <li><b>Data Link</b> — frames, MAC addressing, error detection.</li>
+                        <li><b>Network</b> — logical addressing (IP) and routing.</li>
+                        <li><b>Transport</b> — end to end delivery, TCP and UDP, segmentation.</li>
+                        <li><b>Session</b> — starts, manages and ends sessions.</li>
+                        <li><b>Presentation</b> — translation, encryption, compression.</li>
+                        <li><b>Application</b> — services the user touches: HTTP, FTP, SMTP.</li>
+                    </ol>
+                    <p><b>Why protocols matter:</b> they give both sides the same rules for format, timing, addressing, error handling and sequencing — without them the data is just noise.</p>
+                </div>
+                <div class="net-card-watermark"><i class="fas fa-layer-group"></i></div>
+            </div>
+        </div>
+
+        <!-- Day 5 -->
+        <div class="wd-day-card wd-card-left" data-day="5" data-depth="75m">
+            <div class="wd-card-connector">
+                <div class="wd-connector-line"></div>
+                <div class="wd-connector-dot">
+                    <span>5</span>
+                </div>
+            </div>
+            <div class="wd-card">
+                <div class="wd-card-glow"></div>
+                <div class="wd-card-header">
+                    <div class="wd-card-day-badge">
+                        <i class="fas fa-globe"></i>
+                        <span>Day 05</span>
+                    </div>
+                    <div class="wd-card-depth">
+                        <i class="fas fa-arrow-down"></i>
+                        <span>75m Deep</span>
+                    </div>
+                </div>
+                <div class="wd-card-icon-wrap">
+                    <div class="wd-card-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="wd-card-icon-ring"></div>
+                </div>
+                <h3 class="wd-card-title">Ocean Currents — HTTP, IP, DHCP &amp; DNS</h3>
+                <p class="wd-card-desc">The currents that carry the whole web. How browsers talk to servers, how devices are addressed, how addresses are handed out and how names become numbers.</p>
+                <div class="wd-card-topics">
+                    <span><i class="fas fa-check-circle"></i> Introduction to HTTP</span>
+                    <span><i class="fas fa-check-circle"></i> HTTP methods: GET, POST, PUT, DELETE</span>
+                    <span><i class="fas fa-check-circle"></i> IP addresses</span>
+                    <span><i class="fas fa-check-circle"></i> IPv4 and IPv6</span>
+                    <span><i class="fas fa-check-circle"></i> DHCP</span>
+                    <span><i class="fas fa-check-circle"></i> DNS</span>
+                </div>
+                <div class="wd-card-footer">
+                    <button class="net-notes-toggle whati" type="button" aria-expanded="false">
+                        <i class="fas fa-book-open"></i>
+                        <span>What I Learn...</span>
+                        <i class="fas fa-chevron-down net-notes-chevron"></i>
+                    </button>
+                    <span class="wd-card-status wd-completed"><i class="fas fa-circle-check"></i> Completed</span>
+                </div>
+                <div class="net-notes" hidden>
+                    <ul>
+                        <li><b>HTTP</b> is a stateless request–response protocol of the application layer used by the web.</li>
+                        <li><b>GET</b> reads data, <b>POST</b> creates data, <b>PUT</b> updates data, <b>DELETE</b> removes data.</li>
+                        <li><b>IPv4</b> — 32 bit, dotted decimal like 192.168.1.1. <b>IPv6</b> — 128 bit, hexadecimal like 2001:db8::1, far more addresses.</li>
+                        <li><b>DHCP</b> automatically assigns IP address, subnet mask, gateway and DNS to a device.</li>
+                        <li><b>DNS</b> resolves a human readable domain name into an IP address.</li>
+                    </ul>
+                    <div class="net-chips">
+                        <span class="net-chip">GET</span>
+                        <span class="net-chip">POST</span>
+                        <span class="net-chip">PUT</span>
+                        <span class="net-chip">DELETE</span>
+                    </div>
+                </div>
+                <div class="net-card-watermark"><i class="fas fa-globe"></i></div>
+            </div>
+        </div>
+
+        <!-- Day 6 -->
+        <div class="wd-day-card wd-card-right" data-day="6" data-depth="90m">
+            <div class="wd-card-connector">
+                <div class="wd-connector-line"></div>
+                <div class="wd-connector-dot">
+                    <span>6</span>
+                </div>
+            </div>
+            <div class="wd-card">
+                <div class="wd-card-glow"></div>
+                <div class="wd-card-header">
+                    <div class="wd-card-day-badge">
+                        <i class="fas fa-right-left"></i>
+                        <span>Day 06</span>
+                    </div>
+                    <div class="wd-card-depth">
+                        <i class="fas fa-arrow-down"></i>
+                        <span>90m Deep</span>
+                    </div>
+                </div>
+                <div class="wd-card-icon-wrap">
+                    <div class="wd-card-icon">
+                        <i class="fas fa-right-left"></i>
+                    </div>
+                    <div class="wd-card-icon-ring"></div>
+                </div>
+                <h3 class="wd-card-title">Deep Currents — ARP, ICMP &amp; Revision</h3>
+                <p class="wd-card-desc">Bringing light to the deep. The helper protocols that map addresses and report problems, followed by a full revision of everything learnt so far.</p>
+                <div class="wd-card-topics">
+                    <span><i class="fas fa-check-circle"></i> What is ARP</span>
+                    <span><i class="fas fa-check-circle"></i> What is ICMP</span>
+                    <span><i class="fas fa-check-circle"></i> Revision of previous topics</span>
+                </div>
+                <div class="wd-card-footer">
+                    <button class="net-notes-toggle whati" type="button" aria-expanded="false">
+                        <i class="fas fa-book-open"></i>
+                        <span>What I Learn...</span>
+                        <i class="fas fa-chevron-down net-notes-chevron"></i>
+                    </button>
+                    <span class="wd-card-status wd-completed"><i class="fas fa-circle-check"></i> Completed</span>
+                </div>
+                <div class="net-notes" hidden>
+                    <ul>
+                        <li><b>ARP</b> (Address Resolution Protocol) finds the MAC address that belongs to a known IP address inside a local network.</li>
+                        <li><b>ICMP</b> (Internet Control Message Protocol) carries error and diagnostic messages — this is what <code>ping</code> and <code>traceroute</code> use.</li>
+                        <li><b>Revision:</b> data communication basics, network types, topologies and devices, OSI layers, and the HTTP / IP / DHCP / DNS family.</li>
+                    </ul>
+                </div>
+                <div class="net-card-watermark"><i class="fas fa-right-left"></i></div>
+            </div>
+        </div>
+
+        <!-- Day 7 -->
+        <div class="wd-day-card wd-card-left" data-day="7" data-depth="100m">
+            <div class="wd-card-connector">
+                <div class="wd-connector-line"></div>
+                <div class="wd-connector-dot">
+                    <span>7</span>
+                </div>
+            </div>
+            <div class="wd-card wd-card-final">
+                <div class="wd-card-glow"></div>
+                <div class="wd-card-header">
+                    <div class="wd-card-day-badge wd-badge-final">
+                        <i class="fas fa-tower-broadcast"></i>
+                        <span>Day 07</span>
+                    </div>
+                    <div class="wd-card-depth">
+                        <i class="fas fa-arrow-down"></i>
+                        <span>100m Deep</span>
+                    </div>
+                </div>
+                <div class="wd-card-icon-wrap">
+                    <div class="wd-card-icon wd-icon-final">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="wd-card-icon-ring wd-ring-final"></div>
+                </div>
+                <h3 class="wd-card-title">Jellyfish — WebSocket &amp; Project Discussion</h3>
+                <p class="wd-card-desc">The glowing deep. Real-time, always-open connections between client and server, peer to peer media with WebRTC, and turning all of it into project ideas.</p>
+                <div class="wd-card-topics">
+                    <span><i class="fas fa-check-circle"></i> What is WebSocket</span>
+                    <span><i class="fas fa-check-circle"></i> What is Web Real-time Communication (WebRTC)</span>
+                    <span><i class="fas fa-check-circle"></i> Project ideas and discussion</span>
+                </div>
+                <div class="wd-card-footer">
+                    <button class="net-notes-toggle whati" type="button" aria-expanded="false">
+                        <i class="fas fa-book-open"></i>
+                        <span>What I Learn...</span>
+                        <i class="fas fa-chevron-down net-notes-chevron"></i>
+                    </button>
+                    <span class="wd-card-status wd-completed"><i class="fas fa-circle-check"></i> Completed</span>
+                </div>
+                <div class="net-notes" hidden>
+                    <ul>
+                        <li><b>WebSocket</b> gives a single, long lived, full duplex connection over TCP — the server can push data without the client asking again.</li>
+                        <li><b>WebRTC</b> allows browsers to exchange audio, video and data directly peer to peer, with very low latency.</li>
+                        <li><b>Project ideas:</b> real-time chat app, live network dashboard, IP / subnet calculator, ping &amp; traceroute visualiser, video call demo.</li>
+                    </ul>
+                </div>
+                <div class="net-card-watermark"><i class="fas fa-bolt"></i></div>
+            </div>
+        </div>
+
+        <!-- End marker -->
+        <div class="wd-timeline-end">
+            <div class="wd-treasure-chest">
+                <i class="fas fa-gem"></i>
+            </div>
+            <p>You've reached the deepest point of the Networking module!</p>
+            <a href="index.html" class="btn btn-primary btn-glow">
+                <span>Back to Surface</span>
+                <i class="fas fa-arrow-up"></i>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="wd-footer">
+        <p>&copy; 2026 Himanshu Ghuguskar — Networking Deep Dive</p>
+    </footer>
+
+    <script src="webdev.js"></script>
+    <script src="networking.js"></script>
+</body>
+</html>
